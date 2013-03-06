@@ -27,16 +27,27 @@ THOR.animate = (function(){
         *   RETURN: void
         */
 		fadeIn: function(el, speed){
+            var badBrowser = THOR.browserInfo['browserShortName'] == 'ie'?true:false;
+
 			if(el.style){
-                el.style.opacity= '0';
+                if(badBrowser)
+                    el.style.filters.alpha = '0';
+                else
+                    el.style.opacity = '0';
             }
-            var count = 0;
+
             var fullspeed = speed/50;
             w.fadeInTimer= setInterval(function(){
-                el.style.opacity= +(el.style.opacity)+.02;
-                count++;
-                if(el.style.opacity> 1){
-                    clearInterval(fadeInTimer);
+                if(badBrowser){
+                    el.style.filters.alpha = +(el.style.filters.alpha )+2;
+                    
+                    if(el.style.filters.alpha > 100)
+                        clearInterval(fadeInTimer);
+                }else{
+                    el.style.opacity= +(el.style.opacity)+.02;
+                    
+                    if(el.style.opacity> 1)
+                        clearInterval(fadeInTimer);
                 }
             },
             fullspeed);
@@ -47,19 +58,33 @@ THOR.animate = (function(){
         *   RETURN: void
         */
 		fadeOut: function(el, speed){
-			if(el.style){
-                el.style.opacity= '1';
+			var badBrowser = THOR.browserInfo['browserShortName'] == 'ie'?true:false;
+            
+            if(el.style){
+                if(badBrowser)
+                    el.style.filters.alpha = '100';
+                else
+                    el.style.opacity = '1';
             }
-            var count = 0;
+
             var fullspeed = speed/50;
             w.fadeOutTimer= setInterval(function(){
-                if(el.style.opacity<0.2)
-                    el.style.opacity = 0
-                else
-                    el.style.opacity= (el.style.opacity)-.02;
-                count++;
-                if(el.style.opacity<= 0){
-                    clearInterval(fadeOutTimer);
+                if(badBrowser){
+                    if(el.style.filters.alpha<2)
+                        el.style.filters.alpha = 0
+                    else
+                        el.style.filters.alpha = (el.style.filters.alpha)-2;
+                    
+                    if(el.style.filters.alpha<= 0)
+                        clearInterval(fadeOutTimer);
+                }else{
+                    if(el.style.opacity<0.2)
+                        el.style.opacity = 0
+                    else
+                        el.style.opacity= (el.style.opacity)-.02;
+
+                    if(el.style.opacity<= 0)
+                        clearInterval(fadeOutTimer);
                 }
             },
             fullspeed);
