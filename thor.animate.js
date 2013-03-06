@@ -17,21 +17,21 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 **/
 THOR.animate = (function(){
 
-	var d = document;
-	var w = window;
+    var d = document;
+    var w = window;
 
-	return {
+    return {
 
         /*
         *   Do a simple fadeIn effect
         *   RETURN: void
         */
-		fadeIn: function(el, speed){
-            var badBrowser = THOR.browserInfo['browserShortName'] == 'ie'?true:false;
+        fadeIn: function(el, speed){
+            var badBrowser = THOR.browserInfo()['browserShortName'] == 'ie'?true:false;
 
-			if(el.style){
+            if(el.style){
                 if(badBrowser)
-                    el.style.filters.alpha = '0';
+                    el.style.filter = 'alpha(opacity = 0)';
                 else
                     el.style.opacity = '0';
             }
@@ -39,9 +39,9 @@ THOR.animate = (function(){
             var fullspeed = speed/50;
             w.fadeInTimer= setInterval(function(){
                 if(badBrowser){
-                    el.style.filters.alpha = +(el.style.filters.alpha )+2;
+                    el.style.filter = 'alpha(opacity = '+(+el.filters.alpha.opacity+2)+')';
                     
-                    if(el.style.filters.alpha > 100)
+                    if(el.filters.alpha.opacity > 100)
                         clearInterval(fadeInTimer);
                 }else{
                     el.style.opacity= +(el.style.opacity)+.02;
@@ -51,18 +51,18 @@ THOR.animate = (function(){
                 }
             },
             fullspeed);
-		},
+        },
 
         /*
         *   Do a simple fadeOut effect
         *   RETURN: void
         */
-		fadeOut: function(el, speed){
-			var badBrowser = THOR.browserInfo['browserShortName'] == 'ie'?true:false;
+        fadeOut: function(el, speed){
+            var badBrowser = THOR.browserInfo()['browserShortName'] == 'ie'?true:false;
             
             if(el.style){
                 if(badBrowser)
-                    el.style.filters.alpha = '100';
+                    el.style.filter = 'alpha(opacity = 100)';
                 else
                     el.style.opacity = '1';
             }
@@ -70,12 +70,12 @@ THOR.animate = (function(){
             var fullspeed = speed/50;
             w.fadeOutTimer= setInterval(function(){
                 if(badBrowser){
-                    if(el.style.filters.alpha<2)
-                        el.style.filters.alpha = 0
+                    if(el.filters.alpha.opacity<2)
+                        el.style.filter = 'alpha(opacity = 0)'
                     else
-                        el.style.filters.alpha = (el.style.filters.alpha)-2;
+                        el.style.filter = 'alpha(opacity = '+(el.filters.alpha.opacity-2)+')';
                     
-                    if(el.style.filters.alpha<= 0)
+                    if(el.filters.alpha.opacity<= 0)
                         clearInterval(fadeOutTimer);
                 }else{
                     if(el.style.opacity<0.2)
@@ -88,7 +88,7 @@ THOR.animate = (function(){
                 }
             },
             fullspeed);
-		}
-	}
+        }
+    }
 
 })();

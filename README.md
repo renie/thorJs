@@ -55,5 +55,11 @@ Essa NÃO É e NÂO PRETENDE SER uma biblioteca como jQuery, ExtJS e outras do g
 Known Issues (Problemas conhecidos)
 ======
 
- - FadeIn and FadeOut effects does not work in Internet Explorer < 9
- - Efeitos fadeIn e fadeOut não funcionam no Internet Explorer < 9
+ - FadeIn and FadeOut effects does not work in Internet Explorer < 9 (solved)
+ - Efeitos fadeIn e fadeOut não funcionam no Internet Explorer < 9 (resolvido)
+
+
+
+Internet Explorer support (Suporte ao Internet Explorer)
+======
+ - Internet Explorer 8+
