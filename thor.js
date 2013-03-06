@@ -69,7 +69,7 @@ var THOR = T = t = thor = SONOFODIN = SonOfOdin = sonofodin = (function() {
         * @since 0.1.0
 		*/
 		addClass : function(el, name){
-		   	if (!ED.hasClass(el, name)){
+		   	if (!T.hasClass(el, name)){
 	   			el.className += (el.className ? ' ' : '') +name;
 	   		}
 		},
@@ -86,7 +86,7 @@ var THOR = T = t = thor = SONOFODIN = SonOfOdin = sonofodin = (function() {
         * @since 0.1.0
 		*/
 		removeClass : function(el, name){
-			if (ED.hasClass(el, name)){
+			if (T.hasClass(el, name)){
 	    		el.className=el.className.replace(new RegExp('(\\s|^)'+name+'(\\s|$)'),' ').replace(/^\s+|\s+$/g, '');
 	    	}
 		},
