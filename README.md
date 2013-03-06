@@ -49,3 +49,11 @@ It's just an amount of functions to simplify some boring everyday work.
 
 Essa NÃO É e NÂO PRETENDE SER uma biblioteca como jQuery, ExtJS e outras do gênero.
 É apenas um conjunto de funções feitas para simplificar tarefas chatas do dia-a-dia;
+
+
+
+Known Issues (Problemas conhecidos)
+======
+
+ - FadeIn and FadeOut effects does not work in Internet Explorer < 9
+ - Efeitos fadeIn e fadeOut não funcionam no Internet Explorer < 9
