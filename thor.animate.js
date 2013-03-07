@@ -16,7 +16,12 @@
 * 
 * @author Renie Siqueira da Silva
 * @extends {Thor}
-* @description This is the Thor's animation module, used to make some visual effects. Bugs should be reported to renie.webdev[at]gmail.com
+* @description This is the Thor's animation module, used to make some visual effects. <br />
+* 
+* For using you just need to use THOR ou T keyword, 'animate' for this module, and call a method. Like:<br /><br />
+* var div = T.selector("#myDiv");<br />
+* T.animate.fadeIn(div, 2000)<br />
+*
 * @module Thor.animate
 * @namespace
 * @version 0.1.0

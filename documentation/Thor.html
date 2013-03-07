@@ -38,7 +38,17 @@
     
     
         
-            <div class="description">This is the Thor's core, all other modules depends on this.</div>
+            <div class="description">This is the Thor's core, all other modules depends on this. <br />
+
+For using you just need to use THOR ou T keyword, and call a method. Like:<br /><br />
+if(T.placeholderSupported())<br />
+&nbsp;&nbsp;&nbsp;&nbsp;alert("This Browser supports placeholder");<br /><br />
+
+The only exception is 'selector'. This can be called like:<br /><br />
+$T("#myElementId");<br />
+$T(".myElementsClass");<br />
+$T("#id1, #id2");<br />
+<br /></div>
         
         
         
@@ -66,6 +76,22 @@
     
     
     
+    <dt class="tag-copyright">Copyright:</dt>
+    <dd class="tag-copyright"><ul class="dummy"><li>Copyright (C) 2013  Renie Siqueira da Silva <br /><br />
+
+This program is free software: you can redistribute it and/or modify<br />
+it under the terms of the GNU Affero General Public License as<br />
+published by the Free Software Foundation, either version 3 of the<br />
+License, or (at your option) any later version.<br /><br />
+
+This program is distributed in the hope that it will be useful,<br />
+but WITHOUT ANY WARRANTY; without even the implied warranty of<br />
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the<br />
+GNU Affero General Public License for more details.<br /><br />
+
+You should have received a copy of the GNU Affero General Public License<br />
+along with this program.  If not, see <a href="http://www.gnu.org/licenses/">&lt;http://www.gnu.org/licenses/&gt;</a>.<br /><br /></li></ul></dd>
+    
     
     
     
@@ -74,7 +100,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="thor.js.html">thor.js</a>, line 3
+        <a href="thor.js.html">thor.js</a>, line 1
     </li></ul></dd>
     
     
@@ -243,7 +269,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="thor.js.html">thor.js</a>, line 53
+        <a href="thor.js.html">thor.js</a>, line 60
     </li></ul></dd>
     
     
@@ -425,7 +451,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="thor.js.html">thor.js</a>, line 87
+        <a href="thor.js.html">thor.js</a>, line 94
     </li></ul></dd>
     
     
@@ -635,7 +661,7 @@ Callback function must receive 2 parameters:
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="thor.js.html">thor.js</a>, line 215
+        <a href="thor.js.html">thor.js</a>, line 222
     </li></ul></dd>
     
     
@@ -831,7 +857,7 @@ Callback function must receive 2 parameters:
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="thor.js.html">thor.js</a>, line 123
+        <a href="thor.js.html">thor.js</a>, line 130
     </li></ul></dd>
     
     
@@ -975,7 +1001,7 @@ Callback function must receive 2 parameters:
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="thor.js.html">thor.js</a>, line 313
+        <a href="thor.js.html">thor.js</a>, line 320
     </li></ul></dd>
     
     
@@ -1119,7 +1145,7 @@ Callback function must receive 2 parameters:
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="thor.js.html">thor.js</a>, line 298
+        <a href="thor.js.html">thor.js</a>, line 305
     </li></ul></dd>
     
     
@@ -1286,7 +1312,7 @@ Callback function must receive 2 parameters:
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="thor.js.html">thor.js</a>, line 38
+        <a href="thor.js.html">thor.js</a>, line 45
     </li></ul></dd>
     
     
@@ -1430,7 +1456,7 @@ Callback function must receive 2 parameters:
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="thor.js.html">thor.js</a>, line 284
+        <a href="thor.js.html">thor.js</a>, line 291
     </li></ul></dd>
     
     
@@ -1526,7 +1552,7 @@ Callback function must receive 2 parameters:
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="thor.js.html">thor.js</a>, line 109
+        <a href="thor.js.html">thor.js</a>, line 116
     </li></ul></dd>
     
     
@@ -1693,7 +1719,7 @@ Callback function must receive 2 parameters:
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="thor.js.html">thor.js</a>, line 70
+        <a href="thor.js.html">thor.js</a>, line 77
     </li></ul></dd>
     
     
@@ -1724,6 +1750,300 @@ Callback function must receive 2 parameters:
     
 </dd>
 
+        
+            
+<dt>
+    <h4 class="name" id="seekAndDestroy"><span class="type-signature">&lt;static> </span>seekAndDestroy<span class="signature">(selector)</span><span class="type-signature"> &rarr; {Object|String}</span></h4>
+    
+    
+</dt>
+<dd>
+    
+    
+    <div class="description">
+        Search for elements and destroy them
+    </div>
+    
+
+    
+    
+    
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+		
+		<th>Type</th>
+		
+		
+		
+		
+		
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+	
+	<tbody>
+	
+	
+        <tr>
+            
+                <td class="name"><code>selector</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last">string</td>
+        </tr>
+	
+	
+	</tbody>
+</table>
+    
+    
+    
+<dl class="details">
+    
+        
+    
+    <dt class="tag-version">Version:</dt>
+    <dd class="tag-version"><ul class="dummy"><li>0.1.0</li></ul></dd>
+    
+    
+    
+    <dt class="tag-since">Since:</dt>
+    <dd class="tag-since"><ul class="dummy"><li>0.1.0</dd>
+    
+
+    
+    
+    
+    
+    
+    <dt class="tag-author">Author:</dt>
+    <dd class="tag-author">
+        <ul>
+            <li>Renie Siqueira da Silva</li>
+        </ul>
+    </dd>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="thor.js.html">thor.js</a>, line 351
+    </li></ul></dd>
+    
+    
+    
+    
+    
+    
+    
+</dl>
+
+    
+    
+    
+    
+    
+    
+    <h5>Returns:</h5>
+    
+            
+
+
+<dl>
+	<dt>
+		Type
+	</dt>
+	<dd>
+		
+<span class="param-type">Object</span>
+|
+
+<span class="param-type">String</span>
+
+
+	</dd>
+</dl>
+
+        
+    
+    
+</dd>
+
+        
+            
+<dt>
+    <h4 class="name" id="selector"><span class="type-signature">&lt;static> </span>selector<span class="signature">(selector)</span><span class="type-signature"> &rarr; {Object|String}</span></h4>
+    
+    
+</dt>
+<dd>
+    
+    
+    <div class="description">
+        Just an alias for lazy people
+    </div>
+    
+
+    
+    
+    
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+		
+		<th>Type</th>
+		
+		
+		
+		
+		
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+	
+	<tbody>
+	
+	
+        <tr>
+            
+                <td class="name"><code>selector</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last">string</td>
+        </tr>
+	
+	
+	</tbody>
+</table>
+    
+    
+    
+<dl class="details">
+    
+        
+    
+    <dt class="tag-version">Version:</dt>
+    <dd class="tag-version"><ul class="dummy"><li>0.1.0</li></ul></dd>
+    
+    
+    
+    <dt class="tag-since">Since:</dt>
+    <dd class="tag-since"><ul class="dummy"><li>0.1.0</dd>
+    
+
+    
+    
+    
+    
+    
+    <dt class="tag-author">Author:</dt>
+    <dd class="tag-author">
+        <ul>
+            <li>Renie Siqueira da Silva</li>
+        </ul>
+    </dd>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="thor.js.html">thor.js</a>, line 334
+    </li></ul></dd>
+    
+    
+    
+    
+    
+    
+    
+</dl>
+
+    
+    
+    
+    
+    
+    
+    <h5>Returns:</h5>
+    
+            
+
+
+<dl>
+	<dt>
+		Type
+	</dt>
+	<dd>
+		
+<span class="param-type">Object</span>
+|
+
+<span class="param-type">String</span>
+
+
+	</dd>
+</dl>
+
+        
+    
+    
+</dd>
+
         </dl>
     
     
@@ -1746,7 +2066,7 @@ Callback function must receive 2 parameters:
 <br clear="both">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.2.0-dev</a> on Thu Mar 07 2013 00:16:46 GMT-0300 (BRT)
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.2.0-dev</a> on Thu Mar 07 2013 20:29:28 GMT-0300 (BRT)
 </footer>
 
 <script> prettyPrint(); </script>

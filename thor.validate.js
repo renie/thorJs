@@ -16,7 +16,12 @@
 * 
 * @author Renie Siqueira da Silva
 * @extends {Thor}
-* @description This is the Thor's validation module, used to validate forms. Bugs should be reported to renie.webdev[at]gmail.com
+* @description This is the Thor's validation module, used to validate forms. <br />
+* 
+* For using you just need to use THOR ou T keyword, 'validate' for this module, and call a method. Like:<br /><br />
+* if(T.validate.cpf('00000000000'))<br />
+* &nbsp;&nbsp;&nbsp;&nbsp;alert("CPF is valid!");<br /><br />
+*
 * @module Thor.validate
 * @namespace
 * @version 0.1.0

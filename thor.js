@@ -16,7 +16,17 @@
 * 
 * @author Renie Siqueira da Silva
 * @module Thor
-* @description This is the Thor's core, all other modules depends on this. Bugs should be reported to renie.webdev[at]gmail.com
+* @description This is the Thor's core, all other modules depends on this. <br />
+* 
+* For using you just need to use THOR ou T keyword, and call a method. Like:<br /><br />
+* if(T.placeholderSupported())<br />
+* &nbsp;&nbsp;&nbsp;&nbsp;alert("This Browser supports placeholder");<br /><br />
+*
+* The only exception is 'selector'. This can be called like:<br /><br />
+* $T("#myElementId");<br />
+* $T(".myElementsClass");<br />
+* $T("#id1, #id2");<br />
+* <br />
 * @namespace
 * @version 0.1.0
 */
