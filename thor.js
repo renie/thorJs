@@ -20,7 +20,7 @@
 * @namespace
 * @version 0.1.0
 */
-var THOR = T = (function() {
+var THOR = T = t = thor = SONOFODIN = SonOfOdin = sonofodin = (function() {
 
 	var d = document;
 	var w = window;

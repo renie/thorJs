@@ -60,13 +60,16 @@ Known Issues (Problemas conhecidos)
 
 
 
+
 Internet Explorer support (Suporte ao Internet Explorer)
 ======
- - Internet Explorer 8+
+
+ - Internet Explorer 8+ (strict !Doctype)
 
 
 
-Documentation
+
+Documentation (Documentação)
 ======
 
 Inside 'documentation' folder you'll find a 'index.html'. From that file you can browse the documentation organized by namespaces(modules) and their methods. Each one with functionality, parameters and return described;
@@ -74,8 +77,21 @@ Inside 'documentation' folder you'll find a 'index.html'. From that file you can
 Dentro da pasta 'documentação' você encontrará o arquivo 'index.html'. A partir dele você poderá navegar pela documentação organizada por modulos e seus métodos. Cada um deles com funcionalidade, parametros e retorno descritos.
 
 
-REPORTS!
+
+
+I FOUND A BUG! (ACHEI UM ERRO!)
 ======
 
-Bugs should be reported to renie.webdev[at]gmail.com
-Erros podem ser reportados para renie.webdev[arroba]gmail.com
+Bugs should be reported to renie[dot]webdev[at]gmail[dot]com;
+
+Erros podem ser reportados para renie[ponto]webdev[arroba]gmail[ponto]com.
+
+
+
+
+About Selector (Sobre o seletor)
+======
+
+Yes, it's just an alias for native querySelector. Why? Lazy people ask. Doesn't like? Too bad, tell your mama!
+
+Sim, é só um atalho para a querySelector nativa. Por quê? Pessoas preguiçosas pediram. Não gostou? Que pena, conte pra sua mãe! 
