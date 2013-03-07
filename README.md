@@ -63,3 +63,19 @@ Known Issues (Problemas conhecidos)
 Internet Explorer support (Suporte ao Internet Explorer)
 ======
  - Internet Explorer 8+
+
+
+
+Documentation
+======
+
+Inside 'documentation' folder you'll find a 'index.html'. From that file you can browse the documentation organized by namespaces(modules) and their methods. Each one with functionality, parameters and return described;
+
+Dentro da pasta 'documentação' você encontrará o arquivo 'index.html'. A partir dele você poderá navegar pela documentação organizada por modulos e seus métodos. Cada um deles com funcionalidade, parametros e retorno descritos.
+
+
+REPORTS!
+======
+
+Bugs should be reported to renie.webdev[at]gmail.com
+Erros podem ser reportados para renie.webdev[arroba]gmail.com
