@@ -319,6 +319,41 @@ var THOR = T = (function() {
 		*/
 		getLabelByForAttribute : function(string){
 			return userDataLabels[string];
+		},
+
+		/**
+		* @method selector
+		* @description Just an alias for lazy people
+		* @param {!String} selector string
+		* @return {Object|String}
+		* @memberof Thor
+		* @author Renie Siqueira da Silva
+		* @version 0.1.0
+        * @since 0.1.0
+		*/
+		selector : function(string){
+			if(d.querySelectorAll)
+				return d.querySelectorAll(string);
+			else
+				return "Bad Browser";
+		},
+
+		/**
+		* @method seekAndDestroy
+		* @description Search for elements and destroy them
+		* @param {!String} selector string
+		* @return {Object|String}
+		* @memberof Thor
+		* @author Renie Siqueira da Silva
+		* @version 0.1.0
+        * @since 0.1.0
+		*/
+		seekAndDestroy : function(string){
+			if(d.querySelectorAll){
+				var elements = d.querySelectorAll(string);
+				for(i=0; i<elements.length; i++)
+					elements[i].parentNode.removeChild(elements[i]);
+			}
 		}
 	};
 
@@ -326,6 +361,8 @@ var THOR = T = (function() {
 })();
 
 var THOR = THOR || {};
+
+var $T = $THOR = THOR.selector;
 
 /**
 * @method trim
