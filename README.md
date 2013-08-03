@@ -32,13 +32,6 @@ Você deve ter recebido uma cópia da GNU Affero General Public License
 junto com este programa.  Se não, veja <http://www.gnu.org/licenses/>.
 
 /------------------------------------------------------/
-
-PS. The copy of the GNU Affero General Public License is on AGPL.txt
-
-OBS. A cópia da GNU Affero General Public License está no AGPL.txt 
-(somente em inglês, traduções da AGPL não são oficiais)
-
-/------------------------------------------------------/
 /------------------------------------------------------/
 
 ThorJs
@@ -47,17 +40,8 @@ ThorJs
 This IS NOT and DO NOT INTENDED TO BE a jQuery/ExtJs/something like. 
 It's just an amount of functions to simplify some boring everyday work.
 
-Essa NÃO É e NÂO PRETENDE SER uma biblioteca como jQuery, ExtJS e outras do gênero.
+Essa NÃO É e NÃO PRETENDE SER uma biblioteca como jQuery, ExtJS e outras do gênero.
 É apenas um conjunto de funções feitas para simplificar tarefas chatas do dia-a-dia;
-
-
-
-Known Issues (Problemas conhecidos)
-======
-
- - FadeIn and FadeOut effects does not work in Internet Explorer < 9 (solved)
- - Efeitos fadeIn e fadeOut não funcionam no Internet Explorer < 9 (resolvido)
-
 
 
 
@@ -65,16 +49,6 @@ Internet Explorer support (Suporte ao Internet Explorer)
 ======
 
  - Internet Explorer 7+ (strict !Doctype)
-
-
-
-
-Documentation (Documentação)
-======
-
-In structuring process;
-
-Sendo estruturada.
 
 
 
