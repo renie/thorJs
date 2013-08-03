@@ -1,6 +1,3 @@
-var w = window;
-var d = document;
-
 /*
  *
  * String functions
@@ -10,15 +7,13 @@ var d = document;
 //for removing space from a string
 var trim = function (string) {
 
-    'use strict';
-    return string.replace(/^\s+|\s+$/g,"");
+    return string.replace(/\s+/g,"");
 
 };
 
 //for removing spaces BEFORE from any string
 var ltrim = function (string) {
 
-    'use strict';
     return string.replace(/^\s+/,"");
 
 };
@@ -26,7 +21,6 @@ var ltrim = function (string) {
 // for remove spaces AFTER from any string
 var rtrim = function (string) {
 
-    'use strict';
     return string.replace(/\s+$/,"");
 
 };
@@ -34,7 +28,13 @@ var rtrim = function (string) {
 // Verify if a string is empty
 var isEmpty = function (string) {
 
-    'use strict';
-    return (string === null || string.trim().length < 1  || string === undefined);
+    return (string === null || string === undefined || string.replace(/\s+/g,"").length < 1);
 
 };
+
+if(exports !== null){
+    exports.trim = trim;
+    exports.ltrim = ltrim;
+    exports.rtrim = rtrim;
+    exports.isEmpty = isEmpty;
+}

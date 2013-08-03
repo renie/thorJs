@@ -1,6 +1,3 @@
-var w = window;
-var d = document;
-
 /*
  *
  * Validations functions
@@ -10,7 +7,6 @@ var d = document;
 //for validating brazilian federal personal identification number
 var validateCpf = function (data) {
       
-    'use strict';
     // ignore non-numbers
     var cpf = data.replace(/[^\d]/g, "");
 
@@ -51,35 +47,10 @@ var validateCpf = function (data) {
 //for validating brazilian federal company identification number
 var validateCnpj = function (data) {
 
-    'use strict';
-    CNPJ = data;
-    erro = '';
+    var erro = '';
+    var CNPJ = data.replace(/[^\d]/g, "");
 
-    if (CNPJ.length < 18)
-        return false;
-
-    if ((CNPJ.charAt(2) != ".") || (CNPJ.charAt(6) != ".") || (CNPJ.charAt(10) != "/") || (CNPJ.charAt(15) != "-")){
-        if (erro.length === 0) 
-            return false;
-    }
-    
-    // substituir os caracteres que não são números
-    if(d.layers && parseInt(navigator.appVersion, 10) == 4){
-        x = CNPJ.substring(0,2);
-        x += CNPJ.substring (3,6);
-        x += CNPJ.substring (7,10);
-        x += CNPJ.substring (11,15);
-        x += CNPJ.substring (16,18);
-        CNPJ = x; 
-    } else {
-        CNPJ = CNPJ.replace (".","");
-        CNPJ = CNPJ.replace (".","");
-        CNPJ = CNPJ.replace ("-","");
-        CNPJ = CNPJ.replace ("/","");
-    }
-
-    var nonNumbers = /\D/;
-    if (nonNumbers.test(CNPJ))
+    if (CNPJ.length != 14 || CNPJ == "00000000000000" || CNPJ == "11111111111111" || CNPJ == "22222222222222" || CNPJ == "33333333333333" || CNPJ == "44444444444444" || CNPJ == "55555555555555" || CNPJ == "66666666666666" || CNPJ == "77777777777777" || CNPJ == "88888888888888" || CNPJ == "99999999999999" )
         return false;
 
     var a = [];
@@ -120,3 +91,8 @@ var validateCnpj = function (data) {
     return true;
 
 };
+
+if(exports !== null){
+    exports.validateCpf = validateCpf;
+    exports.validateCnpj = validateCnpj;
+}
