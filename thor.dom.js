@@ -15,6 +15,7 @@ var getMeta = function (name) {
     var metasValues = [];
     for (var i = 0; i < metas.length; i++) {
         metasValues[metas[i].getAttribute('name')] = metas[i].getAttribute('content');
+        
     }
     return metasValues[name];
 
