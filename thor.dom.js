@@ -13,6 +13,8 @@ var getMeta = function (name) {
     'use strict';
     var metas = d.getElementsByTagName('meta');
     var metasValues = [];
+    
+    
     for (var i = 0; i < metas.length; i++) {
         metasValues[metas[i].getAttribute('name')] = metas[i].getAttribute('content');
         
