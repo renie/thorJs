@@ -1,0 +1,9 @@
+{
+  "name": "ThosJS",
+  "version": "0.0.1",
+  "description": "ThorJS - a simple Javascript lib written in raw Javacript. It means: THERE IS NO FUCKING DEPENDENCE",
+  "keywords": ["javascript", "lib", "raw", "thor", "lightweight", "performance", "minimalist"],
+  "author": {"name" : "Renie", "email" : "renie.webdev@gmail.com"},
+  "license": "MPL-2.0",
+  "repository": { "type" : "git", "url" : "https://github.com/renie/thorJs"}
+}
