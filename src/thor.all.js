@@ -1,3 +1,36 @@
+/*
+ *
+ * String functions
+ *
+ */
+
+//for removing space from a string
+function trim(string) {
+    if(typeof string !== 'string' )
+        throw new Error('String expected!');
+    return string.replace(/\s+/g,"");
+}
+
+//for removing spaces BEFORE from any string
+function ltrim(string) {
+    if(typeof string !== 'string' )
+        throw new Error('String expected!');
+    return string.replace(/^\s+/,"");
+}
+
+// for remove spaces AFTER from any string
+function rtrim(string) {
+    if(typeof string !== 'string' )
+        throw new Error('String expected!');
+    return string.replace(/\s+$/,"");
+}
+
+// Verify if a string is empty
+function isEmpty(string) {
+    if(typeof string !== 'string' )
+        throw new Error('String expected!');
+    return (string === null || string === undefined || string.replace(/\s+/g,"").length < 1);
+}
 var w = window;
 var d = document;
 
@@ -77,46 +110,6 @@ var isPropertySupported = function (property) {
 
 };
 
-/*
- *
- * String functions
- *
- */
-
-//for removing space from a string
-var trim = function (string) {
-
-    return string.replace(/\s+/g,"");
-
-};
-
-//for removing spaces BEFORE from any string
-var ltrim = function (string) {
-
-    return string.replace(/^\s+/,"");
-
-};
-
-// for remove spaces AFTER from any string
-var rtrim = function (string) {
-
-    return string.replace(/\s+$/,"");
-
-};
-
-// Verify if a string is empty
-var isEmpty = function (string) {
-
-    return (string === null || string === undefined || string.replace(/\s+/g,"").length < 1);
-
-};
-
-if(exports !== null){
-    exports.trim = trim;
-    exports.ltrim = ltrim;
-    exports.rtrim = rtrim;
-    exports.isEmpty = isEmpty;
-}
 /*
  *
  * Validations functions
@@ -210,8 +203,3 @@ var validateCnpj = function (data) {
     return true;
 
 };
-
-if(exports !== null){
-    exports.validateCpf = validateCpf;
-    exports.validateCnpj = validateCnpj;
-}

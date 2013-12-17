@@ -5,36 +5,29 @@
  */
 
 //for removing space from a string
-var trim = function (string) {
-
+function trim(string) {
+    if(typeof string !== 'string' )
+        throw new Error('String expected!');
     return string.replace(/\s+/g,"");
-
-};
+}
 
 //for removing spaces BEFORE from any string
-var ltrim = function (string) {
-
+function ltrim(string) {
+    if(typeof string !== 'string' )
+        throw new Error('String expected!');
     return string.replace(/^\s+/,"");
-
-};
+}
 
 // for remove spaces AFTER from any string
-var rtrim = function (string) {
-
+function rtrim(string) {
+    if(typeof string !== 'string' )
+        throw new Error('String expected!');
     return string.replace(/\s+$/,"");
-
-};
+}
 
 // Verify if a string is empty
-var isEmpty = function (string) {
-
+function isEmpty(string) {
+    if(typeof string !== 'string' )
+        throw new Error('String expected!');
     return (string === null || string === undefined || string.replace(/\s+/g,"").length < 1);
-
-};
-
-if(exports !== null){
-    exports.trim = trim;
-    exports.ltrim = ltrim;
-    exports.rtrim = rtrim;
-    exports.isEmpty = isEmpty;
 }

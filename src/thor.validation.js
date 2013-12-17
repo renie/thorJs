@@ -91,8 +91,3 @@ var validateCnpj = function (data) {
     return true;
 
 };
-
-if(exports !== null){
-    exports.validateCpf = validateCpf;
-    exports.validateCnpj = validateCnpj;
-}
