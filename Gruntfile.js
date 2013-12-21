@@ -11,21 +11,21 @@ module.exports = function(grunt) {
         },
         'jasmine' : {
             'src':{
-                src : 'src/thor.string.js',
+                src : ['src/thor.string.js','src/thor.validation.js','src/thor.dom.js'],
                 options:{
-                    specs : 'tests/thor.string.test.js'
+                    specs : ['tests/thor.string.test.js','tests/thor.validation.test.js','tests/thor.dom.test.js']
                 }
             },
             'all':{
                 src : 'src/thor.all.js',
                 options:{
-                    specs : 'tests/thor.string.test.js'
+                    specs : ['tests/thor.string.test.js','tests/thor.validation.test.js','tests/thor.dom.test.js']
                 }
             },
             'min':{
                 src : 'compiled/thor.min.js',
                 options:{
-                    specs : 'tests/thor.string.test.js'
+                    specs : ['tests/thor.string.test.js','tests/thor.validation.test.js','tests/thor.dom.test.js']
                 }
             }
         },
@@ -57,6 +57,16 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-closure-compiler');
     grunt.loadNpmTasks('grunt-contrib-jasmine');
     grunt.loadNpmTasks('grunt-remove');
-    grunt.registerTask('default', ['remove','jasmine:src','concat:js','jasmine:all','closure-compiler','jasmine:min']);
+
+    // without tests
+    grunt.registerTask('default', ['remove','concat:js','closure-compiler']);
+    
+    // with all tests
+    grunt.registerTask('full', ['remove','jasmine:src','concat:js','jasmine:all','closure-compiler','jasmine:min']);
+    
+    // just tests
+    grunt.registerTask('src_validations', ['jasmine:src']);
+    grunt.registerTask('concat_validations', ['jasmine:all']);
+    grunt.registerTask('min_validations', ['jasmine:min']);
 
 };

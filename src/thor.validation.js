@@ -5,8 +5,11 @@
  */
 
 //for validating brazilian federal personal identification number
-var validateCpf = function (data) {
-      
+function validateCpf(data) {
+
+    if(typeof data !== 'string' )
+        throw new Error('String expected!');
+    
     // ignore non-numbers
     var cpf = data.replace(/[^\d]/g, "");
 
@@ -42,10 +45,13 @@ var validateCpf = function (data) {
 
     return true;
 
-};
+}
 
 //for validating brazilian federal company identification number
-var validateCnpj = function (data) {
+function validateCnpj(data) {
+
+    if(typeof data !== 'string' )
+        throw new Error('String expected!');
 
     var erro = '';
     var CNPJ = data.replace(/[^\d]/g, "");
@@ -90,4 +96,4 @@ var validateCnpj = function (data) {
 
     return true;
 
-};
+}

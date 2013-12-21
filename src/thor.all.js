@@ -41,53 +41,66 @@ var d = document;
  */
 
 //for getting metatag's contents
-var getMeta = function (name) {
+function getMeta (name) {
     
-    'use strict';
+    if(typeof name !== 'string' )
+        throw new Error('String expected!');
+
     var metas = d.getElementsByTagName('meta');
     var metasValues = [];
-    
-    
-    for (var i = 0; i < metas.length; i++) {
+    var mLength = metas.length;
+    for (var i = 0; i < mLength; i++) {
         metasValues[metas[i].getAttribute('name')] = metas[i].getAttribute('content');
-        
     }
-    return metasValues[name];
 
-};
+    if(metasValues[name] === undefined || metasValues[name] === null)
+        throw new Error('There is no meta tags with name: '+name);
+    else
+        return metasValues[name];
+
+}
 
 //for checking if an element has a specific class
-var hasClass = function (el, name) {
+function hasClass (el, name) {
 
-    'use strict';
+    if(el === null || el === undefined || !el.tagName)
+        throw new Error('Element expected on first parameter!');
+    if(typeof name !== 'string' )
+        throw new Error('String expected on second parameter!');
+
     return new RegExp('(\\s|^)'+name+'(\\s|$)').test(el.className); 
 
-};
+}
 
 //for adding a specific class to an element
-var addClass = function (el, name) {
+function addClass (el, name) {
 
-    'use strict';
-    if (!new RegExp('(\\s|^)'+name+'(\\s|$)').test(el.className)){
+    if(el === null || el === undefined || !el.tagName)
+        throw new Error('Element expected on first parameter!');
+    if(typeof name !== 'string' )
+        throw new Error('String expected on second parameter!');
+
+    if (!new RegExp('(\\s|^)'+name+'(\\s|$)').test(el.className))
         el.className += (el.className ? ' ' : '') +name;
-    }
 
-};
+}
 
 //for removing a specific class to an element
-var removeClass = function (el, name) {
+function removeClass (el, name) {
 
-    'use strict';
-    if (new RegExp('(\\s|^)'+name+'(\\s|$)').test(el.className)){
+    if(el === null || el === undefined || !el.tagName)
+        throw new Error('Element expected on first parameter!');
+    if(typeof name !== 'string' )
+        throw new Error('String expected on second parameter!');
+
+    if (new RegExp('(\\s|^)'+name+'(\\s|$)').test(el.className))
         el.className=el.className.replace(new RegExp('(\\s|^)'+name+'(\\s|$)'),' ').replace(/^\s+|\s+$/g, '');
-    }
 
-};
+}
 
 //for getting metatag's contents
-var addEvent = function (evnt, elem, func) {
+function addEvent (evnt, elem, func) {
 
-   'use strict';
    if (elem.addEventListener){  // W3C DOM
         elem.addEventListener(evnt,func,false);
    }
@@ -100,15 +113,14 @@ var addEvent = function (evnt, elem, func) {
         elem[evnt] = func;
    }
 
-};
+}
 
 //for checking if this browser supports a specific property
-var isPropertySupported = function (property) {
+function isPropertySupported (property) {
     
-    'use strict';
     return d.createElement('span').style[property] !== null;
 
-};
+}
 
 /*
  *
@@ -117,8 +129,11 @@ var isPropertySupported = function (property) {
  */
 
 //for validating brazilian federal personal identification number
-var validateCpf = function (data) {
-      
+function validateCpf(data) {
+
+    if(typeof data !== 'string' )
+        throw new Error('String expected!');
+    
     // ignore non-numbers
     var cpf = data.replace(/[^\d]/g, "");
 
@@ -154,10 +169,13 @@ var validateCpf = function (data) {
 
     return true;
 
-};
+}
 
 //for validating brazilian federal company identification number
-var validateCnpj = function (data) {
+function validateCnpj(data) {
+
+    if(typeof data !== 'string' )
+        throw new Error('String expected!');
 
     var erro = '';
     var CNPJ = data.replace(/[^\d]/g, "");
@@ -202,4 +220,4 @@ var validateCnpj = function (data) {
 
     return true;
 
-};
+}

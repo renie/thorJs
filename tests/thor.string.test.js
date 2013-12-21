@@ -34,6 +34,18 @@ describe("Testing THOR String functions:", function () {
         } 
         expect(result).toThrow(new Error('String expected!'));  
     });
+    it("TRIM - element", function () {  
+        var result = function(){
+            trim(document.createElement('div'));
+        } 
+        expect(result).toThrow(new Error('String expected!'));  
+    });
+    it("TRIM - missing parameter", function () {  
+        var result = function(){
+            trim();
+        } 
+        expect(result).toThrow(new Error('String expected!'));  
+    });
 
 
     /*LEFT TRIM*/
@@ -72,6 +84,18 @@ describe("Testing THOR String functions:", function () {
     it("LEFT TRIM - undefined", function () {  
         var result = function(){
             ltrim(undefined);
+        } 
+        expect(result).toThrow(new Error('String expected!'));  
+    });
+    it("LEFT TRIM - element", function () {  
+        var result = function(){
+            ltrim(document.createElement('div'));
+        } 
+        expect(result).toThrow(new Error('String expected!'));  
+    });
+    it("LEFT TRIM - missing parameter", function () {  
+        var result = function(){
+            ltrim();
         } 
         expect(result).toThrow(new Error('String expected!'));  
     });
@@ -115,7 +139,18 @@ describe("Testing THOR String functions:", function () {
         } 
         expect(result).toThrow(new Error('String expected!'));  
     });
-
+    it("RIGHT TRIM - element", function () {  
+        var result = function(){
+            rtrim(document.createElement('div'));
+        } 
+        expect(result).toThrow(new Error('String expected!'));  
+    });
+    it("RIGHT TRIM - missing parameter", function () {  
+        var result = function(){
+            rtrim();
+        } 
+        expect(result).toThrow(new Error('String expected!'));  
+    });
 
     /*IS EMPTY*/
     it("IS EMPTY - string with spaces", function () {  
@@ -145,6 +180,18 @@ describe("Testing THOR String functions:", function () {
     it("IS EMPTY - undefined", function () {  
         var result = function(){
             isEmpty(undefined);
+        } 
+        expect(result).toThrow(new Error('String expected!'));  
+    });
+    it("IS EMPTY - element", function () {  
+        var result = function(){
+            isEmpty(document.createElement('div'));
+        } 
+        expect(result).toThrow(new Error('String expected!'));  
+    });
+    it("IS EMPTY - missing parameter", function () {  
+        var result = function(){
+            isEmpty();
         } 
         expect(result).toThrow(new Error('String expected!'));  
     });
