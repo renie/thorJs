@@ -50,23 +50,32 @@ module.exports = function(grunt) {
                   compilation_level: 'SIMPLE_OPTIMIZATIONS'
                 }
             }
+        },
+        'thorDocManager':{
+            options :{
+                docPath:'docs/',
+                docExtension:'html',
+                createDocs:true
+            },
+            fileList: ['src/thor.all.js']
         }
     });
 
-    grunt.loadNpmTasks('grunt-contrib-concat');
+/*    grunt.loadNpmTasks('grunt-contrib-concat');
     grunt.loadNpmTasks('grunt-closure-compiler');
     grunt.loadNpmTasks('grunt-contrib-jasmine');
     grunt.loadNpmTasks('grunt-remove');
-
+    */grunt.loadNpmTasks('thorDocManager');
+    grunt.registerTask('testingdoc', ['thorDocManager']);
     // without tests
-    grunt.registerTask('default', ['remove','concat:js','closure-compiler']);
+    //grunt.registerTask('default', ['remove','concat:js','closure-compiler']);
     
     // with all tests
-    grunt.registerTask('full', ['remove','jasmine:src','concat:js','jasmine:all','closure-compiler','jasmine:min']);
+    //grunt.registerTask('full', ['remove','jasmine:src','concat:js','jasmine:all','closure-compiler','jasmine:min']);
     
     // just tests
-    grunt.registerTask('src_validations', ['jasmine:src']);
+    /*grunt.registerTask('src_validations', ['jasmine:src']);
     grunt.registerTask('concat_validations', ['jasmine:all']);
-    grunt.registerTask('min_validations', ['jasmine:min']);
+    grunt.registerTask('min_validations', ['jasmine:min']);*/
 
 };
