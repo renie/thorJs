@@ -21,4 +21,4 @@ POR FAVOR, REPORTE!
 
 #### License
 This software is licensed under the MPL 2.0 License. For more
-information, read [MPL 2.0]<http://www.mozilla.org/MPL/2.0/>
+information, read [MPL 2.0](http://www.mozilla.org/MPL/2.0/)
