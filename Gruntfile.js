@@ -29,6 +29,9 @@ module.exports = function(grunt) {
                 }
             }
         },
+        'jshint': {
+            all: ['Gruntfile.js', 'src/**/*.js']
+        },
         'concat': {
             js: {
                 src: [
@@ -61,21 +64,25 @@ module.exports = function(grunt) {
         }
     });
 
-/*    grunt.loadNpmTasks('grunt-contrib-concat');
+    grunt.loadNpmTasks('grunt-contrib-concat');
     grunt.loadNpmTasks('grunt-closure-compiler');
     grunt.loadNpmTasks('grunt-contrib-jasmine');
     grunt.loadNpmTasks('grunt-remove');
-    */grunt.loadNpmTasks('thorDocManager');
-    grunt.registerTask('testingdoc', ['thorDocManager']);
+    grunt.loadNpmTasks('thorDocManager');
+    grunt.loadNpmTasks('grunt-contrib-jshint');
+    
     // without tests
-    //grunt.registerTask('default', ['remove','concat:js','closure-compiler']);
+    grunt.registerTask('default', ['remove','jshint','concat:js','closure-compiler']);
     
     // with all tests
-    //grunt.registerTask('full', ['remove','jasmine:src','concat:js','jasmine:all','closure-compiler','jasmine:min']);
+    grunt.registerTask('full', ['remove','jasmine:src','jshint','concat:js','jasmine:all','closure-compiler','jasmine:min']);
     
     // just tests
-    /*grunt.registerTask('src_validations', ['jasmine:src']);
+    grunt.registerTask('src_validations', ['jasmine:src']);
     grunt.registerTask('concat_validations', ['jasmine:all']);
-    grunt.registerTask('min_validations', ['jasmine:min']);*/
+    grunt.registerTask('min_validations', ['jasmine:min']);
+
+    // just docs
+    grunt.registerTask('testingdoc', ['thorDocManager']);
 
 };

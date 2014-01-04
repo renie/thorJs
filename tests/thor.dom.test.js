@@ -213,4 +213,73 @@ describe("Testing THOR DOM functions:", function () {
         expect(result).toThrow(new Error('Element expected on first parameter!'));  
     });
 
+
+    /*GETSTYLE*/
+    it("GETSTYLE - get style added by js", function () {
+        var newElement = document.createElement('div');
+        newElement.style.height = '10px';
+        document.body.appendChild(newElement);
+
+        var result = getStyle(newElement, 'height');
+
+        expect(result).toEqual('10px');  
+    });
+    it("GETSTYLE - get style added by js in a styletag", function () {
+        var css = 'div { height: 10px; }',
+            head = document.getElementsByTagName('head')[0],
+            style = document.createElement('style');
+        style.type = 'text/css';
+        
+        if (style.styleSheet)
+            style.styleSheet.cssText = css;
+        else
+            style.appendChild(document.createTextNode(css));
+        head.appendChild(style);
+
+        var newElement = document.createElement('div');
+        document.body.appendChild(newElement);
+
+        var result = getStyle(newElement, 'height');
+
+        expect(result).toEqual('10px');  
+    });
+    it("GETSTYLE - get style added by js in a styletag, hidden style", function () {
+        var css = 'div { height: 10px; display: none; }',
+            head = document.getElementsByTagName('head')[0],
+            style = document.createElement('style');
+        style.type = 'text/css';
+        
+        if (style.styleSheet)
+            style.styleSheet.cssText = css;
+        else
+            style.appendChild(document.createTextNode(css));
+        head.appendChild(style);
+
+        var newElement = document.createElement('div');
+        document.body.appendChild(newElement);
+
+        var result = getStyle(newElement, 'height');
+
+        expect(result).toEqual('10px');  
+    });
+    it("GETSTYLE - missing first parameter", function () {
+        var result = function(){
+            getStyle(null, 'fun');
+        }
+        expect(result).toThrow(new Error('Element expected on first parameter!'));  
+    });
+    it("GETSTYLE - missing second parameter", function () {
+        var newElement = document.createElement('div');
+        document.body.appendChild(newElement);
+        var result = function(){
+            getStyle(newElement, null);
+        }
+        expect(result).toThrow(new Error('String expected on second parameter!'));  
+    });
+    it("GETSTYLE - missing both parameter", function () {
+        var result = function(){
+            getStyle();
+        }
+        expect(result).toThrow(new Error('Element expected on first parameter!'));  
+    });
 });

@@ -2,6 +2,6 @@
 p,li{font-size: .7em;}
 h2{ font-size: 1.2em; margin: 0 0 20px }
 a{ text-decoration: none; color: #CF5300; outline: none;padding-left: 0px; }
-a:hover,a:focus{ padding-left: 15px; color: #666; outline: none;transition:all 1s ease; -webkit-transition:all 1s ease; -moz-transition:all 1s ease; -o-transition:all 1s ease;}
+a:hover,a:focus{ padding-left: 15px; color: #666; outline: none;transition:all 1s ease-in-out; -webkit-transition:all 1s ease-in-out; -moz-transition:all 1s ease-in-out; -o-transition:all 1s ease-in-out;}
 li{margin: 5px 0 0 20px; list-style: none;}
 body{padding: 10px;}
