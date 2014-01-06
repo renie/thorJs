@@ -26,6 +26,10 @@ Here [https://github.com/renie/thor.Js/wiki] .
 For a while, this is just a personal project. But people enjoy it, I'll think about
 a more professional documentation.
 
+#### Why don't you use object orientation on your code?
+One of the proposals of ThorJS is high performance, and object notation reduces performance. 
+Ok it does not reduces that much, and for code organization it would be better. But I prefer to get best performance on ThorJS, thus when other people were using this it will never be the cause of bad performance.
+
 #### I have a good feature or an idea for a feature. How can I suggest you to add this on Thor?
 You can fork my project here on Github or you can send me an e-mail.
 
