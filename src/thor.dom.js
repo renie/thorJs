@@ -1,13 +1,15 @@
-/*exported getMeta, hasClass, addClass, removeClass, addEvent, isPropertySupported, getStyle */
-var d = document;
-
-/*
- *
- * DOM functions
- *
+/* exported getMeta, hasClass, addClass, removeClass, addEvent, isPropertySupported, getStyle */
+/**
+ * Created by Renie Siqueira.
  */
 
-//for getting metatag's contents
+var d = document;
+
+/**
+ * Function for getting HTML Meta Tags' contents
+ * @param name
+ * @returns {String}
+ */
 function getMeta (name) {
 	'use strict';
 
@@ -25,7 +27,12 @@ function getMeta (name) {
 		return metasValues[name];
 }
 
-//for checking if an element has a specific class
+/**
+ * Function for checking if an DOM element has a specific style class
+ * @param el
+ * @param name
+ * @returns {boolean}
+ */
 function hasClass (el, name) {
 	'use strict';
 
@@ -37,7 +44,12 @@ function hasClass (el, name) {
 	return new RegExp('(\\s|^)'+name+'(\\s|$)').test(el.className);
 }
 
-//for adding a specific class to an element
+/**
+ * Function for adding a specific style class in a DOM element
+ * @param el
+ * @param name
+ * @returns {void}
+ */
 function addClass (el, name) {
     'use strict';
 
@@ -50,7 +62,12 @@ function addClass (el, name) {
         el.className += (el.className ? ' ' : '') +name;
 }
 
-//for removing a specific class to an element
+/**
+ * Function for removing a specific style class in a DOM element
+ * @param el
+ * @param name
+ * @returns {void}
+ */
 function removeClass (el, name) {
 	'use strict';
 
@@ -63,7 +80,12 @@ function removeClass (el, name) {
 		el.className=el.className.replace(new RegExp('(\\s|^)'+name+'(\\s|$)'),' ').replace(/^\s+|\s+$/g, '');
 }
 
-//for getting metatag's contents
+/**
+ * Function for adding an event listener in a DOM element
+ * @param el
+ * @param name
+ * @returns {void}
+ */
 function addEvent (evnt, elem, func) {
 	'use strict';
 
@@ -78,14 +100,23 @@ function addEvent (evnt, elem, func) {
 	}
 }
 
-//for checking if this browser supports a specific property
+/**
+ * Function checking if a property is support by current browser
+ * @param property
+ * @returns {boolean}
+ */
 function isPropertySupported (property) {
 	'use strict';
 
 	return d.createElement('span').style[property] !== null;
 }
 
-//for getting styles
+/**
+ * Function for getting styles of any element
+ * @param el
+ * @param styleName
+ * @returns {*|string}
+ */
 function getStyle(el, styleName) {
 	'use strict';
 

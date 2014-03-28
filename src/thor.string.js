@@ -1,11 +1,13 @@
-/*exported trim, ltrim, rtrim, isEmpty*/
-/*
- *
- * String functions
- *
+/* exported trim, ltrim, rtrim, isEmpty*/
+/**
+ * Created by Renie Siqueira.
  */
 
-//for removing space from a string
+/**
+ * Function for removing every single space of the string
+ * @param string
+ * @returns {string}
+ */
 function trim(string) {
 	'use strict';
 
@@ -14,7 +16,11 @@ function trim(string) {
 	return string.replace(/\s+/g,'');
 }
 
-//for removing spaces BEFORE from any string
+/**
+ * Function for removing spaces BEFORE any string
+ * @param string
+ * @returns {string}
+ */
 function ltrim(string) {
 	'use strict';
 	
@@ -23,7 +29,11 @@ function ltrim(string) {
 	return string.replace(/^\s+/,'');
 }
 
-// for remove spaces AFTER from any string
+/**
+ * Function for removing spaces AFTER any string
+ * @param string
+ * @returns {string}
+ */
 function rtrim(string) {
 	'use strict';
 	
@@ -32,7 +42,11 @@ function rtrim(string) {
 	return string.replace(/\s+$/,'');
 }
 
-// Verify if a string is empty
+/**
+ * Function for verifying if a string is empty
+ * @param string
+ * @returns {boolean}
+ */
 function isEmpty(string) {
 	'use strict';
 	
