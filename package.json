@@ -22,7 +22,7 @@
 	},
 	"devDependencies": {
 		"grunt": "~0.4.2",
-		"grunt-closure-compile": "~0.0.21",
+		"grunt-closure-compiler": "~0.0.21",
 		"grunt-contrib-concat": "~0.3.0",
 		"grunt-contrib-jshint": "~0.8.0",
 		"grunt-remove": "~0.1.0",
