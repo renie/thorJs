@@ -1,4 +1,4 @@
-ThorJs
+ThorJs [![Build Status](https://travis-ci.org/renie/thorJs.svg?branch=master)](https://travis-ci.org/renie/thorJs)
 ======
 This IS NOT and DO NOT INTENDED TO BE a jQuery/ExtJs/something like. 
 It's just an amount of functions to simplify some boring everyday work.
