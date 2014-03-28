@@ -72,7 +72,6 @@ module.exports = function(grunt) {
 
     grunt.loadNpmTasks('grunt-contrib-concat');
     grunt.loadNpmTasks('grunt-closure-compiler');
-    //grunt.loadNpmTasks('grunt-contrib-jasmine');
     grunt.loadNpmTasks('grunt-remove');
     grunt.loadNpmTasks('grunt-contrib-jshint');
 	grunt.loadNpmTasks('grunt-karma');
@@ -83,12 +82,10 @@ module.exports = function(grunt) {
     // with all tests
     grunt.registerTask('full', ['remove','karma:src','jshint','concat:js','karma:all','closure-compiler','karma:min']);
 
-
 	// just tests
 	grunt.registerTask('tests', ['karma:simple']);
-	//grunt.registerTask('src_validations', ['jasmine:src']);
-	//grunt.registerTask('concat_validations', ['jasmine:all']);
-	//grunt.registerTask('min_validations', ['jasmine:min']);
 
+	// with all tests
+	grunt.registerTask('travis', ['remove','karma:srcsimple','jshint','concat:js','karma:alltravis','closure-compiler','karma:mintravis']);
 
 };
