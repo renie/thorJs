@@ -66,6 +66,12 @@ module.exports = function(grunt) {
 			},
 			'min': {
 				'configFile': 'karmaConfigs/karma.min.conf.js'
+			},
+			'alltravis': {
+				'configFile': 'karmaConfigs/karma.all.travis.conf.js'
+			},
+			'mintravis': {
+				'configFile': 'karmaConfigs/karma.min.travis.conf.js'
 			}
 		}
     });
@@ -86,6 +92,6 @@ module.exports = function(grunt) {
 	grunt.registerTask('tests', ['karma:simple']);
 
 	// with all tests
-	grunt.registerTask('travis', ['remove','karma:srcsimple','jshint','concat:js','karma:alltravis','closure-compiler','karma:mintravis']);
+	grunt.registerTask('travis', ['remove','karma:simple','jshint','concat:js','karma:alltravis','closure-compiler','karma:mintravis']);
 
 };
