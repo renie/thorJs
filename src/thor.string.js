@@ -11,7 +11,7 @@
 function trim(string) {
 	'use strict';
 
-	if(typeof string !== 'string' )
+	if (typeof string !== 'string' )
 		throw new Error('String expected!');
 	return string.replace(/\s+/g,'');
 }
@@ -23,8 +23,8 @@ function trim(string) {
  */
 function ltrim(string) {
 	'use strict';
-	
-	if(typeof string !== 'string' )
+
+	if (typeof string !== 'string' )
 		throw new Error('String expected!');
 	return string.replace(/^\s+/,'');
 }
@@ -36,9 +36,10 @@ function ltrim(string) {
  */
 function rtrim(string) {
 	'use strict';
-	
-	if(typeof string !== 'string' )
+
+	if (typeof string !== 'string' )
 		throw new Error('String expected!');
+
 	return string.replace(/\s+$/,'');
 }
 
@@ -49,8 +50,11 @@ function rtrim(string) {
  */
 function isEmpty(string) {
 	'use strict';
-	
-	if(typeof string !== 'string' )
+
+	if (string === null || string === undefined)
+		return true;
+
+	if (typeof string !== 'string' )
 		throw new Error('String expected!');
 	return (string === null || string === undefined || string.replace(/\s+/g,'').length < 1);
 }

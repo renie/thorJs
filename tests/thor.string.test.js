@@ -220,17 +220,13 @@ describe('Testing THOR String functions:', function() {
     });
 
     it('IS EMPTY - null', function () {
-        var result = function(){
-            isEmpty(null);
-        };
-        expect(result).toThrow(new Error('String expected!'));
+        var result = isEmpty(null);
+        expect(result).toEqual(true);
     });
 
     it('IS EMPTY - undefined', function () {
-        var result = function(){
-            isEmpty(undefined);
-        };
-        expect(result).toThrow(new Error('String expected!'));
+		var result = isEmpty(undefined);
+        expect(result).toEqual(true);
     });
 
     it('IS EMPTY - element', function () {
@@ -241,9 +237,7 @@ describe('Testing THOR String functions:', function() {
     });
 
     it('IS EMPTY - missing parameter', function () {
-        var result = function(){
-            isEmpty();
-        };
-        expect(result).toThrow(new Error('String expected!'));
+        var result = isEmpty();
+        expect(result).toEqual(true);
     });
 });

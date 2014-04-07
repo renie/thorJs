@@ -9,26 +9,6 @@ module.exports = function(grunt) {
             },
             fileList:['compiled/thor.all.js', 'compiled/thor.min.js']
         },
-        /*'jasmine' : {
-            'src':{
-                src : ['src/thor.string.js','src/thor.validation.js','src/thor.dom.js'],
-                options:{
-                    specs : ['tests/thor.string.test.js','tests/thor.validation.test.js','tests/thor.dom.test.js']
-                }
-            },
-            'all':{
-                src : 'compiled/thor.all.js',
-                options:{
-                    specs : ['tests/thor.string.test.js','tests/thor.validation.test.js','tests/thor.dom.test.js']
-                }
-            },
-            'min':{
-                src : 'compiled/thor.min.js',
-                options:{
-                    specs : ['tests/thor.string.test.js','tests/thor.validation.test.js','tests/thor.dom.test.js']
-                }
-            }
-        },*/
         'jshint': {
             all: ['Gruntfile.js', 'src/**/*.js']
         },
