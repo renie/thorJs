@@ -66,12 +66,12 @@ module.exports = function(grunt) {
     grunt.registerTask('default', ['remove','jshint','concat:js','closure-compiler', 'karma:simple']);
 
     // with all tests
-    grunt.registerTask('full', ['remove','karma:src','jshint','concat:js','karma:all','closure-compiler','karma:min']);
+    grunt.registerTask('full', ['remove','jshint','karma:src','concat:js','karma:all','closure-compiler','karma:min']);
 
 	// just tests
 	grunt.registerTask('tests', ['karma:simple']);
 
 	// with all tests
-	grunt.registerTask('travis', ['remove','karma:simple','jshint','concat:js','karma:alltravis','closure-compiler','karma:mintravis']);
+	grunt.registerTask('travis', ['remove','jshint','karma:simple','concat:js','karma:alltravis','closure-compiler','karma:mintravis']);
 
 };

@@ -1,4 +1,4 @@
-/* exported trim, ltrim, rtrim, isEmpty*/
+/* exported trim, ltrim, rtrim, isEmpty, truncate*/
 /**
  * Created by Renie Siqueira.
  */
@@ -56,5 +56,41 @@ function isEmpty(string) {
 
 	if (typeof string !== 'string' )
 		throw new Error('String expected!');
-	return (string === null || string === undefined || string.replace(/\s+/g,'').length < 1);
+	return (string.replace(/\s+/g,'').length < 1);
+}
+
+/**
+ * Function for breaking a string in an specified size
+ * @param string
+ * @returns {string}
+ */
+function truncate(string, size, suffix, breakword) {
+
+	if (typeof string !== 'string' )
+		throw new Error('String expected!');
+
+	if (string.replace(/\s+/g, '').length < 1)
+		return '';
+
+	suffix = suffix || '';
+	size = size || 0;
+	if (typeof size !== 'number' )
+		throw new Error('Number expected!');
+
+	if (size < 1)
+		return string + suffix;
+
+	if (breakword || string.length < size) {
+		var r = new RegExp('^(.{' + size.toString() + '}\\s*).*$');
+		return string.replace(r, '$1') + suffix;
+	} else if(string.length > size) {
+
+		if (string.lastIndexOf(' ') !== -1) {
+			string = string.substring(0, size + 1);
+			string = string.substring(0, Math.min(string.length, string.lastIndexOf(' ')));
+		}
+		string = string + suffix;
+		return string;
+	}
+
 }

@@ -24,6 +24,6 @@
     "unused": true,
     "maxparams": 3,
     "noarg": false,
-    "indent": 4,
+    "indent": 5,
     "latedef": true
 }
