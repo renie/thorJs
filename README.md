@@ -40,7 +40,7 @@ Not at all. But you should used this libraries when there is a really advantage 
 Import almost 90kb and loose lots of performance(comparisons links: [getting styles](http://jsperf.com/style-getter), [getting styles setted on stylesheets](http://jsperf.com/style-getter-stylesheet), [selectors](http://jsperf.com/default-selectors), [id selectors](http://jsperf.com/simple-id-selection)) just to verifing existence/toggle classes and use selectors doesn't seem to be a nice choice. 
 
 #### You're an idiot trying to reinvent the wheel. Just a motherf*cker that started coding yesterday and thinks is better than other programmers!!
-Like you too =D.
+I like you too =D.
 
 
 ### FAQ - CONTRIBUITOR
