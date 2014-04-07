@@ -1,6 +1,8 @@
 /* globals validateCpf, validateCnpj */
 describe('Testing THOR Validation functions:', function () {
-    /*CPF*/
+    /**
+     * CPF
+     */
     it('CPF - valid number 1', function () {
         var result = validateCpf('43301271723');
         expect(result).toEqual(true);
@@ -58,7 +60,9 @@ describe('Testing THOR Validation functions:', function () {
         expect(result).toThrow(new Error('String expected!'));
     });
 
-    /*CNPJ*/
+	/**
+	 * CNPJ
+	 */
     it('CNPJ - valid number 1', function () {
         var result = validateCnpj('72444771000189');
         expect(result).toEqual(true);

@@ -4,7 +4,7 @@
  */
 
 /**
- * Function for validating brazilian's federal personal identification bnumber
+ * Function for validating brazilian's federal personal identification number
  * @param data
  * @returns {boolean}
  */
@@ -57,7 +57,7 @@ function validateCpf(data) {
 }
 
 /**
- * Function for validating brazilian's federal company identification bnumber
+ * Function for validating brazilian's federal company identification number
  * @param data
  * @returns {boolean}
  */

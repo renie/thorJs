@@ -101,17 +101,6 @@ function addEvent (evnt, elem, func) {
 }
 
 /**
- * Function checking if a property is support by current browser
- * @param property
- * @returns {boolean}
- */
-function isPropertySupported (property) {
-	'use strict';
-
-	return d.createElement('span').style[property] !== null;
-}
-
-/**
  * Function for getting styles of any element
  * @param el
  * @param styleName
