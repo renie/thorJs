@@ -43,7 +43,7 @@ Import almost 90kb and loose lots of performance(comparisons links: [getting sty
 I like you too =D.
 
 
-### FAQ - CONTRIBUITOR
+### FAQ - CONTRIBUTOR
 
 #### I have a good feature or an idea for a feature. How can I suggest you to add this on Thor?
 You can fork my project here on Github or you can send me an e-mail.
