@@ -10,7 +10,7 @@ describe('Testing THOR DOM functions:', function () {
 	 */
     it('GETMETA - there is no meta tag', function () {
         var result = function(){
-            getMeta('testingmeta');
+            document.getMeta('testingmeta');
         };
         expect(result).toThrow(new Error('There is no meta tags with name: testingmeta'));
     });
@@ -21,7 +21,7 @@ describe('Testing THOR DOM functions:', function () {
         newMeta.setAttribute('content','this meta has been tested!');
         document.head.appendChild(newMeta);
 
-        var result = getMeta('testingmeta');
+        var result = document.getMeta('testingmeta');
         expect(result).toEqual('this meta has been tested!');
     });
     it('GETMETA - get a non existing meta value', function () {
@@ -31,7 +31,7 @@ describe('Testing THOR DOM functions:', function () {
         document.head.appendChild(newMeta);
 
         var result = function(){
-            getMeta('testingwrongmeta');
+			document.getMeta('testingwrongmeta');
         };
         expect(result).toThrow(new Error('There is no meta tags with name: testingwrongmeta'));
     });
@@ -43,7 +43,7 @@ describe('Testing THOR DOM functions:', function () {
         document.head.appendChild(newMeta);
 
         var result = function(){
-            getMeta('');
+			document.getMeta('');
         };
         expect(result).toThrow(new Error('There is no meta tags with name: '));
     });
@@ -55,7 +55,7 @@ describe('Testing THOR DOM functions:', function () {
         document.head.appendChild(newMeta);
 
         var result = function(){
-            getMeta(0);
+			document.getMeta(0);
         };
         expect(result).toThrow(new Error('String expected!'));
     });
@@ -67,14 +67,14 @@ describe('Testing THOR DOM functions:', function () {
         document.head.appendChild(newMeta);
 
         var result = function(){
-            getMeta(document.createElement('div'));
+			document.getMeta(document.createElement('div'));
         };
         expect(result).toThrow(new Error('String expected!'));
     });
 
     it('GETMETA - missing param', function () {
         var result = function(){
-            getMeta();
+			document.getMeta();
         };
         expect(result).toThrow(new Error('String expected!'));
     });
@@ -90,7 +90,7 @@ describe('Testing THOR DOM functions:', function () {
         newElement.className = 'test work';
         document.body.appendChild(newElement);
 
-        var result = hasClass(newElement, 'work');
+        var result = newElement.hasClass('work');
         expect(result).toEqual(true);
     });
 
@@ -99,15 +99,8 @@ describe('Testing THOR DOM functions:', function () {
         newElement.className = 'test work';
         document.body.appendChild(newElement);
 
-        var result = hasClass(newElement, 'fun');
+        var result = newElement.hasClass('fun');
         expect(result).toEqual(false);
-    });
-
-    it('HASCLASS - missing first parameter', function () {
-        var result = function(){
-            hasClass(null, 'fun');
-        };
-        expect(result).toThrow(new Error('Element expected on first parameter!'));
     });
 
     it('HASCLASS - missing second parameter', function () {
@@ -115,18 +108,10 @@ describe('Testing THOR DOM functions:', function () {
         newElement.className = 'test work';
         document.body.appendChild(newElement);
         var result = function(){
-            hasClass(newElement, null);
+			newElement.hasClass(null);
         };
         expect(result).toThrow(new Error('String expected on second parameter!'));
     });
-
-    it('HASCLASS - missing boh parameter', function () {
-        var result = function(){
-            hasClass();
-        };
-        expect(result).toThrow(new Error('Element expected on first parameter!'));
-    });
-
 
 
 
@@ -137,7 +122,7 @@ describe('Testing THOR DOM functions:', function () {
         var newElement = document.createElement('div');
         document.body.appendChild(newElement);
 
-        addClass(newElement, 'work');
+		newElement.addClass('work');
         
         var result = newElement.className.indexOf('work');
 
@@ -148,7 +133,7 @@ describe('Testing THOR DOM functions:', function () {
         var newElement = document.createElement('div');
         document.body.appendChild(newElement);
 
-        addClass(newElement, 'work');
+		newElement.addClass('work');
         
         var result1 = newElement.className.indexOf('work ');
         var result2 = newElement.className.indexOf(' work');
@@ -162,7 +147,7 @@ describe('Testing THOR DOM functions:', function () {
         newElement.className = 'job';
         document.body.appendChild(newElement);
 
-        addClass(newElement, 'work');
+		newElement.addClass('work');
         
         var result1 = newElement.className.indexOf(' work');
         var result2 = newElement.className !== 'work';
@@ -171,29 +156,14 @@ describe('Testing THOR DOM functions:', function () {
         expect(result2).toEqual(true);
     });
 
-    it('ADDCLASS - missing first parameter', function () {
-        var result = function(){
-            addClass(null, 'fun');
-        };
-        expect(result).toThrow(new Error('Element expected on first parameter!'));
-    });
-
-    it('ADDCLASS - missing second parameter', function () {
+    it('ADDCLASS - missing parameter', function () {
         var newElement = document.createElement('div');
         document.body.appendChild(newElement);
         var result = function(){
-            addClass(newElement, null);
+			newElement.addClass(null);
         };
         expect(result).toThrow(new Error('String expected on second parameter!'));
     });
-
-    it('ADDCLASS - missing boh parameter', function () {
-        var result = function(){
-            addClass();
-        };
-        expect(result).toThrow(new Error('Element expected on first parameter!'));
-    });
-
 
 
 
@@ -206,7 +176,7 @@ describe('Testing THOR DOM functions:', function () {
         newElement.className = 'foo';
         document.body.appendChild(newElement);
 
-        removeClass(newElement, 'foo');
+		newElement.removeClass('foo');
         
         var result = newElement.className.indexOf('foo');
 
@@ -218,7 +188,7 @@ describe('Testing THOR DOM functions:', function () {
         newElement.className = 'job work';
         document.body.appendChild(newElement);
 
-        removeClass(newElement, 'work');
+		newElement.removeClass('work');
         
         var result1 = newElement.className.indexOf('work');
         var result2 = newElement.className === 'job';
@@ -227,27 +197,13 @@ describe('Testing THOR DOM functions:', function () {
         expect(result2).toEqual(true);
     });
 
-    it('REMOVECLASS - missing first parameter', function () {
-        var result = function(){
-            removeClass(null, 'fun');
-        };
-        expect(result).toThrow(new Error('Element expected on first parameter!'));
-    });
-
-    it('REMOVECLASS - missing second parameter', function () {
+    it('REMOVECLASS - missing parameter', function () {
         var newElement = document.createElement('div');
         document.body.appendChild(newElement);
         var result = function(){
-            removeClass(newElement, null);
+			newElement.removeClass(null);
         };
         expect(result).toThrow(new Error('String expected on second parameter!'));
-    });
-
-    it('REMOVECLASS - missing both parameter', function () {
-        var result = function(){
-            removeClass();
-        };
-        expect(result).toThrow(new Error('Element expected on first parameter!'));
     });
 
 
@@ -261,7 +217,7 @@ describe('Testing THOR DOM functions:', function () {
         newElement.style.height = '10px';
         document.body.appendChild(newElement);
 
-        var result = getStyle(newElement, 'height');
+        var result = newElement.getStyle('height');
 
         expect(result).toEqual('10px');
     });
@@ -281,7 +237,7 @@ describe('Testing THOR DOM functions:', function () {
         var newElement = document.createElement('div');
         document.body.appendChild(newElement);
 
-        var result = getStyle(newElement, 'height');
+        var result = newElement.getStyle('height');
 
         expect(result).toEqual('10px');
     });
@@ -301,31 +257,18 @@ describe('Testing THOR DOM functions:', function () {
         var newElement = document.createElement('div');
         document.body.appendChild(newElement);
 
-        var result = getStyle(newElement, 'height');
+        var result = newElement.getStyle('height');
 
         expect(result).toEqual('10px');
     });
 
-    it('GETSTYLE - missing first parameter', function () {
-        var result = function(){
-            getStyle(null, 'fun');
-        };
-        expect(result).toThrow(new Error('Element expected on first parameter!'));
-    });
-
-    it('GETSTYLE - missing second parameter', function () {
+    it('GETSTYLE - missing parameter', function () {
         var newElement = document.createElement('div');
         document.body.appendChild(newElement);
         var result = function(){
-            getStyle(newElement, null);
+			newElement.getStyle(null);
         };
         expect(result).toThrow(new Error('String expected on second parameter!'));
     });
 
-    it('GETSTYLE - missing both parameter', function () {
-        var result = function(){
-            getStyle();
-        };
-        expect(result).toThrow(new Error('Element expected on first parameter!'));
-    });
 });
