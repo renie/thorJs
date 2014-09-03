@@ -1,353 +1,182 @@
-/* globals trim, ltrim, rtrim, isEmpty, truncate */
 describe('Testing THOR String functions:', function() {
 
 	/**
 	* TRIM
 	*/
 	it('TRIM - multiple and variable spaces', function () {
-		var result = trim(' t  e s   t i  n g ');
+		var result = ' t  e s   t i  n g '.trim();
 		expect(result).toEqual('testing');
 	});
 
 	it('TRIM - empty string', function () {
-		var result = trim('');
+		var result = ''.trim();
 		expect(result).toEqual('');
 	});
 
 	it('TRIM - no spaces at begin and end of string', function () {
-		var result = trim('t  e s   t i  n g');
+		var result = 't  e s   t i  n g'.trim();
 		expect(result).toEqual('testing');
 	});
 
 	it('TRIM - no spaces', function () {
-		var result = trim('testing');
+		var result = 'testing'.trim();
 		expect(result).toEqual('testing');
 	});
-
-	it('TRIM - number', function () {
-		var result = function(){
-			trim(1);
-		};
-		expect(result).toThrow(new Error('String expected!'));
-	});
-
-	it('TRIM - null', function () {
-		var result = function(){
-			trim(null);
-		};
-		expect(result).toThrow(new Error('String expected!'));
-	});
-
-	it('TRIM - undefined', function () {
-		var result = function(){
-			trim(undefined);
-		};
-		expect(result).toThrow(new Error('String expected!'));
-	});
-
-	it('TRIM - element', function () {
-		var result = function(){
-			trim(document.createElement('div'));
-		};
-		expect(result).toThrow(new Error('String expected!'));
-	});
-
-	it('TRIM - missing parameter', function () {
-		var result = function(){
-			trim();
-		};
-		expect(result).toThrow(new Error('String expected!'));
-	});
-
-
 
 
 	/**
 	* LEFT TRIM
 	*/
 	it('LEFT TRIM - multiple and variable spaces', function () {
-		var result = ltrim('   t  e s t i  n g   ');
+		var result = '   t  e s t i  n g   '.ltrim();
 		expect(result).toEqual('t  e s t i  n g   ');
 	});
 
 	it('LEFT TRIM - no spaces on left side', function () {
-		var result = ltrim('t  e s t i  n g   ');
+		var result = 't  e s t i  n g   '.ltrim();
 		expect(result).toEqual('t  e s t i  n g   ');
 	});
 
 	it('LEFT TRIM - no spaces on right side', function () {
-		var result = ltrim('   t  e s t i  n g');
+		var result = '   t  e s t i  n g'.ltrim();
 		expect(result).toEqual('t  e s t i  n g');
 	});
 
 	it('LEFT TRIM - empty string', function () {
-		var result = ltrim('');
+		var result = ''.ltrim();
 		expect(result).toEqual('');
 	});
 
 	it('LEFT TRIM - no spaces', function () {
-		var result = trim('testing');
+		var result = 'testing'.ltrim();
 		expect(result).toEqual('testing');
 	});
-
-	it('LEFT TRIM - number', function () {
-		var result = function(){
-			ltrim(1);
-		};
-		expect(result).toThrow(new Error('String expected!'));
-	});
-
-	it('LEFT TRIM - null', function () {
-		var result = function(){
-			ltrim(null);
-		};
-		expect(result).toThrow(new Error('String expected!'));
-	});
-
-	it('LEFT TRIM - undefined', function () {
-		var result = function(){
-			ltrim(undefined);
-		};
-		expect(result).toThrow(new Error('String expected!'));
-	});
-
-	it('LEFT TRIM - element', function () {
-		var result = function(){
-			ltrim(document.createElement('div'));
-		};
-		expect(result).toThrow(new Error('String expected!'));
-	});
-
-	it('LEFT TRIM - missing parameter', function () {
-		var result = function(){
-			ltrim();
-		};
-		expect(result).toThrow(new Error('String expected!'));
-	});
-
-
 
 
 	/**
 	* RIGHT TRIM
 	*/
 	it('RIGHT TRIM - multiple and variable spaces', function () {
-		var result = rtrim('   t  e s t i  n g   ');
+		var result = '   t  e s t i  n g   '.rtrim();
 		expect(result).toEqual('   t  e s t i  n g');
 	});
 
 	it('RIGHT TRIM - no spaces on left side', function () {
-		var result = rtrim('t  e s t i  n g   ');
+		var result = 't  e s t i  n g   '.rtrim();
 		expect(result).toEqual('t  e s t i  n g');
 	});
 
 	it('RIGHT TRIM - no spaces on right side', function () {
-		var result = rtrim('   t  e s t i  n g');
+		var result = '   t  e s t i  n g'.rtrim();
 		expect(result).toEqual('   t  e s t i  n g');
 	});
 
 	it('RIGHT TRIM - empty string', function () {
-		var result = rtrim('');
+		var result = ''.rtrim();
 		expect(result).toEqual('');
 	});
 
 	it('RIGHT TRIM - no spaces', function () {
-		var result = rtrim('testing');
+		var result = 'testing'.rtrim();
 		expect(result).toEqual('testing');
 	});
-
-	it('RIGHT TRIM - number', function () {
-		var result = function(){
-			rtrim(1);
-		};
-		expect(result).toThrow(new Error('String expected!'));
-	});
-
-	it('RIGHT TRIM - null', function () {
-		var result = function(){
-			rtrim(null);
-		};
-		expect(result).toThrow(new Error('String expected!'));
-	});
-
-	it('RIGHT TRIM - undefined', function () {
-		var result = function(){
-			rtrim(undefined);
-		};
-		expect(result).toThrow(new Error('String expected!'));
-	});
-
-	it('RIGHT TRIM - element', function () {
-		var result = function(){
-			rtrim(document.createElement('div'));
-		};
-		expect(result).toThrow(new Error('String expected!'));
-	});
-
-	it('RIGHT TRIM - missing parameter', function () {
-		var result = function(){
-			rtrim();
-		};
-		expect(result).toThrow(new Error('String expected!'));
-	});
-
-
 
 
 	/**
 	* IS EMPTY
 	*/
 	it('IS EMPTY - string with spaces', function () {
-		var result = isEmpty(' t  e s   t i  n g ');
+		var result = ' t  e s   t i  n g '.isEmpty();
 		expect(result).toEqual(false);
 	});
 
 	it('IS EMPTY - no string or space', function () {
-		var result = isEmpty('');
+		var result = ''.isEmpty();
 		expect(result).toEqual(true);
 	});
 
 	it('IS EMPTY - just spaces', function () {
-		var result = isEmpty('   ');
+		var result = '   '.isEmpty();
 		expect(result).toEqual(true);
 	});
-
-	it('IS EMPTY - number', function () {
-		var result = function(){
-			isEmpty(1);
-		};
-		expect(result).toThrow(new Error('String expected!'));
-	});
-
-	it('IS EMPTY - null', function () {
-		var result = isEmpty(null);
-		expect(result).toEqual(true);
-	});
-
-	it('IS EMPTY - undefined', function () {
-		var result = isEmpty(undefined);
-		expect(result).toEqual(true);
-	});
-
-	it('IS EMPTY - element', function () {
-		var result = function(){
-			isEmpty(document.createElement('div'));
-		};
-		expect(result).toThrow(new Error('String expected!'));
-	});
-
-	it('IS EMPTY - missing parameter', function () {
-		var result = isEmpty();
-		expect(result).toEqual(true);
-	});
-
-
 
 
 	/**
 	* TRUNCATE
 	*/
 	it('TRUNCATE - string with spaces', function () {
-		var result = truncate('This is a testing string', 12, '', false);
+		var result = 'This is a testing string'.truncate(12, '', false);
 		expect(result).toEqual('This is a');
 	});
 
 	it('TRUNCATE - string without spaces', function () {
-		var result = truncate('Thisisatestingstring', 12, '', false);
+		var result = 'Thisisatestingstring'.truncate(12, '', false);
 		expect(result).toEqual('Thisisatestingstring');
 	});
 
 	it('TRUNCATE - string with spaces and suffix', function () {
-		var result = truncate('This is a testing string', 12, '---', false);
+		var result = 'This is a testing string'.truncate(12, '---', false);
 		expect(result).toEqual('This is a---');
 	});
 
 	it('TRUNCATE - string without spaces and suffix', function () {
-		var result = truncate('Thisisatestingstring', 12, '...', false);
+		var result = 'Thisisatestingstring'.truncate(12, '...', false);
 		expect(result).toEqual('Thisisatestingstring...');
 	});
 
 	it('TRUNCATE - string with spaces', function () {
-		var result = truncate('This is a testing string', 12, '', true);
+		var result = 'This is a testing string'.truncate(12, '', true);
 		expect(result).toEqual('This is a te');
 	});
 
 	it('TRUNCATE - string without spaces', function () {
-		var result = truncate('Thisisatestingstring', 12, '', true);
+		var result = 'Thisisatestingstring'.truncate(12, '', true);
 		expect(result).toEqual('Thisisatesti');
 	});
 
 	it('TRUNCATE - string with spaces and suffix', function () {
-		var result = truncate('This is a testing string', 12, '---', true);
+		var result = 'This is a testing string'.truncate(12, '---', true);
 		expect(result).toEqual('This is a te---');
 	});
 
 	it('TRUNCATE - string without spaces and suffix', function () {
-		var result = truncate('Thisisatestingstring', 12, '...', true);
+		var result = 'Thisisatestingstring'.truncate(12, '...', true);
 		expect(result).toEqual('Thisisatesti...');
 	});
 
 	it('TRUNCATE - size greater than string length', function () {
-		var result = truncate('Thisisatestingstring', 58, '...');
+		var result = 'Thisisatestingstring'.truncate(58, '...');
 		expect(result).toEqual('Thisisatestingstring...');
 	});
 
 	it('TRUNCATE - size negative', function () {
-		var result = truncate('Thisisatestingstring', -2, '...');
+		var result = 'Thisisatestingstring'.truncate(-2, '...');
 		expect(result).toEqual('Thisisatestingstring...');
 	});
 
 	it('TRUNCATE - size null', function () {
-		var result = truncate('Thisisatestingstring', -2, '...');
+		var result = 'Thisisatestingstring'.truncate(-2, '...');
 		expect(result).toEqual('Thisisatestingstring...');
 	});
 
 	it('TRUNCATE - size undefined', function () {
-		var result = truncate('Thisisatestingstring', -2, '...');
+		var result = 'Thisisatestingstring'.truncate(-2, '...');
 		expect(result).toEqual('Thisisatestingstring...');
 	});
 
 	it('TRUNCATE - size 0', function () {
-		var result = truncate('Thisisatestingstring', -2, '...');
+		var result = 'Thisisatestingstring'.truncate(-2, '...');
 		expect(result).toEqual('Thisisatestingstring...');
 	});
 
 	it('TRUNCATE - empty string', function () {
-		var result = truncate('   ');
+		var result = '   '.truncate();
 		expect(result).toEqual('');
 	});
 
-	it('TRUNCATE - null', function () {
-		var result = function(){
-			truncate(null);
-		};
-		expect(result).toThrow(new Error('String expected!'));
-	});
-
-	it('TRUNCATE - undefined', function () {
-		var result = function(){
-			truncate(undefined);
-		};
-		expect(result).toThrow(new Error('String expected!'));
-	});
-
-	it('TRUNCATE - element', function () {
-		var result = function(){
-			truncate(document.createElement('div'));
-		};
-		expect(result).toThrow(new Error('String expected!'));
-	});
-
 	it('TRUNCATE - missing parameter', function () {
 		var result = function() {
-			truncate();
-		};
-		expect(result).toThrow(new Error('String expected!'));
-	});
-
-	it('TRUNCATE - missing parameter', function () {
-		var result = function() {
-			truncate('blablabla', 'sizeerrado');
+			'blablabla'.truncate('sizeerrado');
 		};
 		expect(result).toThrow(new Error('Number expected!'));
 	});

@@ -1,4 +1,3 @@
-/* exported getMeta, hasClass, addClass, removeClass, addEvent, isPropertySupported, getStyle */
 /**
  * Created by Renie Siqueira.
  */

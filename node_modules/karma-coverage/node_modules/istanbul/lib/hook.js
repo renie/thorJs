@@ -29,6 +29,7 @@
  *      var foo = require('foo'); //will now print foo's module path to console
  *
  * @class Hook
+ * @module main
  */
 var path = require('path'),
     fs = require('fs'),
@@ -41,7 +42,7 @@ var path = require('path'),
 function transformFn(matcher, transformer, verbose) {
 
     return function (code, filename) {
-        var shouldHook = matcher(path.resolve(filename)),
+        var shouldHook = typeof filename === 'string' && matcher(path.resolve(filename)),
             transformed,
             changed = false;
 

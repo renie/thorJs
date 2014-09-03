@@ -5,71 +5,52 @@
 
 /**
  * Function for removing every single space of the string
- * @param string
  * @returns {string}
  */
-function trim(string) {
+String.prototype.trim = function() {
 	'use strict';
-
-	if (typeof string !== 'string' )
-		throw new Error('String expected!');
-	return string.replace(/\s+/g,'');
-}
+	return this.replace(/\s+/g,'');
+};
 
 /**
  * Function for removing spaces BEFORE any string
- * @param string
  * @returns {string}
  */
-function ltrim(string) {
+String.prototype.ltrim = function() {
 	'use strict';
-
-	if (typeof string !== 'string' )
-		throw new Error('String expected!');
-	return string.replace(/^\s+/,'');
-}
+	return this.replace(/^\s+/,'');
+};
 
 /**
  * Function for removing spaces AFTER any string
- * @param string
  * @returns {string}
  */
-function rtrim(string) {
+String.prototype.rtrim = function() {
 	'use strict';
 
-	if (typeof string !== 'string' )
-		throw new Error('String expected!');
-
-	return string.replace(/\s+$/,'');
-}
+	return this.replace(/\s+$/,'');
+};
 
 /**
  * Function for verifying if a string is empty
- * @param string
  * @returns {boolean}
  */
-function isEmpty(string) {
+String.prototype.isEmpty = function() {
 	'use strict';
 
-	if (string === null || string === undefined)
-		return true;
-
-	if (typeof string !== 'string' )
-		throw new Error('String expected!');
-	return (string.replace(/\s+/g,'').length < 1);
-}
+	return (this.replace(/\s+/g,'').length < 1);
+};
 
 /**
  * Function for breaking a string in an specified size
- * @param string
+ * @param size
+ * @param suffix
+ * @param breakword
  * @returns {string}
  */
-function truncate(string, size, suffix, breakword) {
+String.prototype.truncate = function(size, suffix, breakword) {
 
-	if (typeof string !== 'string' )
-		throw new Error('String expected!');
-
-	if (string.replace(/\s+/g, '').length < 1)
+	if (this.replace(/\s+/g, '').length < 1)
 		return '';
 
 	suffix = suffix || '';
@@ -78,19 +59,24 @@ function truncate(string, size, suffix, breakword) {
 		throw new Error('Number expected!');
 
 	if (size < 1)
-		return string + suffix;
+		return this + suffix;
 
-	if (breakword || string.length < size) {
+	if (breakword || this.length < size) {
 		var r = new RegExp('^(.{' + size.toString() + '}\\s*).*$');
-		return string.replace(r, '$1') + suffix;
-	} else if(string.length > size) {
+		return this.replace(r, '$1') + suffix;
+	} else if(this.length > size) {
 
-		if (string.lastIndexOf(' ') !== -1) {
-			string = string.substring(0, size + 1);
-			string = string.substring(0, Math.min(string.length, string.lastIndexOf(' ')));
+		var str = this;
+
+		if (this.lastIndexOf(' ') !== -1) {
+			str = str.substring(0, size + 1);
+			str = str.substring(0, Math.min(str.length, str.lastIndexOf(' ')));
 		}
-		string = string + suffix;
-		return string;
+
+		str += suffix;
+		return str;
+	} else {
+		return this;
 	}
 
-}
+};

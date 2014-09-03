@@ -317,6 +317,7 @@ function getReportClass(stats, watermark) {
  *
  * @class HtmlReport
  * @extends Report
+ * @module report
  * @constructor
  * @param {Object} opts optional
  * @param {String} [opts.dir] the directory in which to generate reports. Defaults to `./html-report`
@@ -336,6 +337,10 @@ HtmlReport.TYPE = 'html';
 util.inherits(HtmlReport, Report);
 
 Report.mix(HtmlReport, {
+
+    synopsis: function () {
+        return 'Navigable HTML coverage report for every file and directory';
+    },
 
     getPathHtml: function (node, linkMapper) {
         var parent = node.parent,
@@ -511,6 +516,7 @@ Report.mix(HtmlReport, {
             dir = opts.dir,
             summarizer = new TreeSummarizer(),
             writer = opts.writer || new FileWriter(sync),
+            that = this,
             tree;
 
         collector.files().forEach(function (key) {
@@ -529,8 +535,10 @@ Report.mix(HtmlReport, {
                 writer.copyFile(resolvedSource, resolvedDestination);
             }
         });
+        writer.on('done', function () { that.emit('done'); });
         //console.log(JSON.stringify(tree.root, undefined, 4));
         this.writeFiles(writer, tree.root, dir, collector);
+        writer.done();
     }
 });
 
