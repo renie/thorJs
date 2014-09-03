@@ -1,7 +1,7 @@
 ThorJs [![Build Status](https://travis-ci.org/renie/thorJs.svg?branch=master)](https://travis-ci.org/renie/thorJs)
 ======
 This IS NOT and DO NOT INTENDED TO BE a jQuery/ExtJs/something like. 
-It's just an amount of functions to simplify some boring everyday work.
+It's just a tools pack to simplify some boring everyday work.
 
 ### Bug and suggestions
 Bugs and suggestions should be sent to renie[dot]webdev[at]gmail[dot]com.
