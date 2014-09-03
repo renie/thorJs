@@ -22,15 +22,13 @@ module.exports = function(grunt) {
 				dest: 'compiled/thor.all.js'
 			}
 		},
-		'closure-compiler': {
-			frontend: {
-				closurePath: 'node_modules/grunt-closure-compiler',
-				js: 'compiled/thor.all.js',
-				jsOutputFile: 'compiled/thor.min.js',
-				maxBuffer: 500,
-				noreport: true,
-				options: {
-					compilation_level: 'SIMPLE_OPTIMIZATIONS'
+		uglify: {
+			options: {
+				mangle: false
+			},
+			my_target: {
+				files: {
+					'compiled/thor.min.js': ['compiled/thor.all.js']
 				}
 			}
 		},
@@ -57,21 +55,21 @@ module.exports = function(grunt) {
 	});
 
 	grunt.loadNpmTasks('grunt-contrib-concat');
-	grunt.loadNpmTasks('grunt-closure-compiler');
+	grunt.loadNpmTasks('grunt-contrib-uglify');
 	grunt.loadNpmTasks('grunt-remove');
 	grunt.loadNpmTasks('grunt-contrib-jshint');
 	grunt.loadNpmTasks('grunt-karma');
 
 	// without tests
-	grunt.registerTask('default', ['remove','jshint','concat:js','closure-compiler', 'karma:simple']);
+	grunt.registerTask('default', ['remove','jshint','concat:js','uglify', 'karma:simple']);
 
 	// with all tests
-	grunt.registerTask('full', ['remove','jshint','karma:src','concat:js','karma:all','closure-compiler','karma:min']);
+	grunt.registerTask('full', ['remove','jshint','karma:src','concat:js','karma:all','uglify','karma:min']);
 
 	// just tests
 	grunt.registerTask('tests', ['karma:simple']);
 
 	// with all tests
-	grunt.registerTask('travis', ['remove','jshint','karma:simple','concat:js','karma:alltravis','closure-compiler','karma:mintravis']);
+	grunt.registerTask('travis', ['remove','jshint','karma:simple','concat:js','karma:alltravis','uglify','karma:mintravis']);
 
 };
