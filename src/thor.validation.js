@@ -1,14 +1,17 @@
-/* exported validateCpf, validateCnpj */
+/* exported ValidationHelper */
 /**
  * Created by Renie Siqueira.
  */
+
+function ValidationHelper() {}
+
 
 /**
  * Function for validating brazilian's federal personal identification number
  * @param data
  * @returns {boolean}
  */
-function validateCpf(data) {
+ValidationHelper.prototype.validateCpf = function(data) {
 	'use strict';
 
 	if (typeof data !== 'string' )
@@ -50,18 +53,17 @@ function validateCpf(data) {
 	if (rev === 10 || rev === 11)
 		rev = 0;
 
-	if (rev !== parseInt(cpf.charAt(10), 10))
-		return false;
+	return rev === parseInt(cpf.charAt(10), 10);
 
-	return true;
-}
+
+};
 
 /**
  * Function for validating brazilian's federal company identification number
  * @param data
  * @returns {boolean}
  */
-function validateCnpj(data) {
+ValidationHelper.prototype.validateCnpj = function(data) {
 	'use strict';
 
 	if (typeof data !== 'string' )
@@ -81,7 +83,12 @@ function validateCnpj(data) {
 		CNPJ === '99999999999999' )
 		return false;
 
-	var a = [], b = 0, c = [6,5,4,3,2,9,8,7,6,5,4,3,2], i = 0, x = null, y = 0;
+	var a = [],
+		b = 0,
+		c = [6,5,4,3,2,9,8,7,6,5,4,3,2],
+		i = 0,
+		y = 0,
+		x;
 	for (; i < 12; i++) {
 		a[i] = CNPJ.charAt(i);
 		b += a[i] * c[i+1];
@@ -105,9 +112,6 @@ function validateCnpj(data) {
 		(CNPJ.charAt(13) != a[13]))
 		return false;
 
-	if (erro.length > 0)
-		return false;
-	else
-		return true;
+	return erro.length <= 0;
 
-}
+};

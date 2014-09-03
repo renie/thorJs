@@ -195,20 +195,20 @@
     </style>
 </head>
 <body>
-<div class="header medium">
+<div class="header high">
     <h1>Code coverage report for <span class="entity">src/thor.dom.js</span></h1>
     <h2>
         
-        Statements: <span class="metric">74.42% <small>(32 / 43)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Statements: <span class="metric">86.05% <small>(37 / 43)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
         
         
-        Branches: <span class="metric">71.43% <small>(20 / 28)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Branches: <span class="metric">82.14% <small>(23 / 28)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
         
         
         Functions: <span class="metric">71.43% <small>(5 / 7)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
         
         
-        Lines: <span class="metric">74.42% <small>(32 / 43)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Lines: <span class="metric">86.05% <small>(37 / 43)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
         
         Ignored: <span class="metric"><span class="ignore-none">none</span></span> &nbsp;&nbsp;&nbsp;&nbsp;
     </h2>
@@ -330,7 +330,9 @@
 112
 113
 114
-115</td><td class="line-coverage"><span class="cline-any cline-neutral">&nbsp;</span>
+115
+116</td><td class="line-coverage"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -431,20 +433,21 @@
 <span class="cline-any cline-yes">1</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">4</span>
+<span class="cline-any cline-yes">5</span>
 <span class="cline-any cline-yes">1</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">3</span>
-<span class="cline-any cline-yes">3</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">4</span>
+<span class="cline-any cline-yes">4</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">3</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">/**
+<span class="cline-any cline-yes">4</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">/* globals HTMLDocument*/
+/**
  * Created by Renie Siqueira.
  */
 &nbsp;
@@ -519,8 +522,8 @@ HTMLElement.prototype.removeClass = function(name) {
 &nbsp;
 /**
  * Function for adding an event listener in a DOM element
- * @param eventName
- * @param function
+ * @param evnt
+ * @param func
  * @returns {void}
  */
 HTMLElement.prototype.addEvent = <span class="fstat-no" title="function not covered" >function(evnt, func) {</span>
@@ -529,7 +532,7 @@ HTMLElement.prototype.addEvent = <span class="fstat-no" title="function not cove
 <span class="cstat-no" title="statement not covered" >	if (this.addEventListener){  // W3C DOM</span>
 <span class="cstat-no" title="statement not covered" >		this.addEventListener(evnt,func,false);</span>
 	} else <span class="cstat-no" title="statement not covered" >if (this.attachEvent) { // IE DOM</span>
-<span class="cstat-no" title="statement not covered" >		this.attachEvent('on'+evnt, <span class="fstat-no" title="function not covered" >function() {</span></span>
+<span class="cstat-no" title="statement not covered" >		this.attachEvent('on' + evnt, <span class="fstat-no" title="function not covered" >function() {</span></span>
 <span class="cstat-no" title="statement not covered" >			func.call(this);</span>
 		});
 	} else {
@@ -549,12 +552,12 @@ HTMLElement.prototype.getStyle = function(styleName) {
 		throw new Error('String expected on second parameter!');
 &nbsp;
 	var value = this.style[styleName] || window.getComputedStyle(this, null).getPropertyValue(styleName);
-	<span class="missing-if-branch" title="if path not taken" >I</span>if (value === 0 || value === 'auto') {
-<span class="cstat-no" title="statement not covered" >		this.style.visibility = 'hidden';</span>
-<span class="cstat-no" title="statement not covered" >		this.style.display	= 'block';</span>
-<span class="cstat-no" title="statement not covered" >		value				= this.style[styleName] || window.getComputedStyle(this, null).getPropertyValue(styleName);</span>
-<span class="cstat-no" title="statement not covered" >		this.style.visibility = 'visible';</span>
-<span class="cstat-no" title="statement not covered" >		this.style.display	= 'none';</span>
+	if (value === 0 || value === 'auto') {
+		this.style.visibility = 'hidden';
+		this.style.display	= 'block';
+		value				= this.style[styleName] || window.getComputedStyle(this, null).getPropertyValue(styleName);
+		this.style.visibility = 'visible';
+		this.style.display	= 'none';
 	}
 &nbsp;
 	return value;
@@ -563,7 +566,7 @@ HTMLElement.prototype.getStyle = function(styleName) {
 
 </div>
 <div class="footer">
-    <div class="meta">Generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Wed Sep 03 2014 00:17:42 GMT-0300 (BRT)</div>
+    <div class="meta">Generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Wed Sep 03 2014 01:22:27 GMT-0300 (BRT)</div>
 </div>
 
 <script src="../prettify.js"></script>

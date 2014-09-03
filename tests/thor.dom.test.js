@@ -165,8 +165,6 @@ describe('Testing THOR DOM functions:', function () {
 	});
 
 
-
-
 	/**
 	 * REMOVE CLASS
 	 */
@@ -270,4 +268,15 @@ describe('Testing THOR DOM functions:', function () {
 		expect(result).toThrow(new Error('String expected on second parameter!'));
 	});
 
+	it('GETSTYLE - get dimension on hidden element', function () {
+		var newElement = document.createElement('div');
+		newElement.innerHTML = 'Loren Ipsum Dolor';
+
+		newElement.style.display = 'none';
+		document.body.appendChild(newElement);
+
+		var result = newElement.getStyle('height');
+
+		expect(parseInt(result)).toBeGreaterThan(0);
+	});
 });

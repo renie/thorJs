@@ -1,3 +1,4 @@
+/* globals HTMLDocument*/
 /**
  * Created by Renie Siqueira.
  */
@@ -73,8 +74,8 @@ HTMLElement.prototype.removeClass = function(name) {
 
 /**
  * Function for adding an event listener in a DOM element
- * @param eventName
- * @param function
+ * @param evnt
+ * @param func
  * @returns {void}
  */
 HTMLElement.prototype.addEvent = function(evnt, func) {
@@ -83,7 +84,7 @@ HTMLElement.prototype.addEvent = function(evnt, func) {
 	if (this.addEventListener){  // W3C DOM
 		this.addEventListener(evnt,func,false);
 	} else if (this.attachEvent) { // IE DOM
-		this.attachEvent('on'+evnt, function() {
+		this.attachEvent('on' + evnt, function() {
 			func.call(this);
 		});
 	} else {

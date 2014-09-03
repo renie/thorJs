@@ -64,7 +64,7 @@ String.prototype.truncate = function(size, suffix, breakword) {
 	if (breakword || this.length < size) {
 		var r = new RegExp('^(.{' + size.toString() + '}\\s*).*$');
 		return this.replace(r, '$1') + suffix;
-	} else if(this.length > size) {
+	} else {
 
 		var str = this;
 
@@ -75,8 +75,6 @@ String.prototype.truncate = function(size, suffix, breakword) {
 
 		str += suffix;
 		return str;
-	} else {
-		return this;
 	}
 
 };
