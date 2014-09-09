@@ -3,8 +3,6 @@
  * Created by Renie Siqueira.
  */
 
-var d = document;
-
 /**
  * Function for getting HTML Meta Tags' contents
  * @param name
@@ -16,7 +14,7 @@ HTMLDocument.prototype.getMeta = function(name) {
 	if(typeof name !== 'string' )
 		throw new Error('String expected!');
 
-	var metas = d.getElementsByTagName('meta');
+	var metas = document.getElementsByTagName('meta');
 	var metasValues = [], mLength = metas.length, i = 0;
 	for (; i < mLength; i++)
 		metasValues[metas[i].getAttribute('name')] = metas[i].getAttribute('content');
