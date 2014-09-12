@@ -60,7 +60,8 @@ module.exports = function(grunt) {
 		},
 		'thorJS_builder': {
 			options: {
-				finalPath : 'compiled/'
+				finalPath : 'compiled/',
+				libName : 'Thor'
 			},
 			files:  ['compiled/thor.min.js']
 		}

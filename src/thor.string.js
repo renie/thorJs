@@ -49,6 +49,7 @@ String.prototype.isEmpty = function() {
  * @returns {string}
  */
 String.prototype.truncate = function(size, suffix, breakword) {
+	'use strict';
 
 	if (this.replace(/\s+/g, '').length < 1)
 		return '';
