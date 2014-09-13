@@ -20,7 +20,7 @@ information, read [MPL 2.0](http://www.mozilla.org/MPL/2.0/)
 If you want to just use, you can download full project from github and use 'thor.min.js' located in 'compiled' folder.
 
 #### Where is documentation?
-Here [https://github.com/renie/thor.Js/wiki] .
+Here [https://github.com/renie/thorJs/wiki] .
 
 #### Why is your documentation on Github? Why not an standalone website?
 For a while, this is just a personal project. But people enjoy it, I'll think about

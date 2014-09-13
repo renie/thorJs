@@ -1,3 +1,11 @@
+/*
+ * ThorJs
+ * https://github.com/renie/thorJs
+ *
+ * Copyright (c) 2014 Renie Siqueira
+ * Licensed under the MPL, 2.0 licenses.
+ */
+
 module.exports = function(grunt) {
 
 	// Project configuration.

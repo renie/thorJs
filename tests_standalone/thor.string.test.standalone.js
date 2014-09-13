@@ -1,4 +1,13 @@
 /* globals Thor */
+
+/*
+ * ThorJs
+ * https://github.com/renie/thorJs
+ *
+ * Copyright (c) 2014 Renie Siqueira
+ * Licensed under the MPL, 2.0 licenses.
+ */
+
 describe('Testing THOR String functions:', function() {
 
 	/**

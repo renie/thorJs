@@ -1,6 +1,10 @@
 /* exported trim, ltrim, rtrim, isEmpty, truncate*/
-/**
- * Created by Renie Siqueira.
+/*
+ * ThorJs
+ * https://github.com/renie/thorJs
+ *
+ * Copyright (c) 2014 Renie Siqueira
+ * Licensed under the MPL, 2.0 licenses.
  */
 
 /**
@@ -50,7 +54,7 @@ String.prototype.isEmpty = function() {
  */
 String.prototype.truncate = function(size, suffix, breakword) {
 	'use strict';
-	
+
 	if (this.replace(/\s+/g, '').length < 1)
 		return '';
 
@@ -80,8 +84,12 @@ String.prototype.truncate = function(size, suffix, breakword) {
 
 };
 /* globals HTMLDocument*/
-/**
- * Created by Renie Siqueira.
+/*
+ * ThorJs
+ * https://github.com/renie/thorJs
+ *
+ * Copyright (c) 2014 Renie Siqueira
+ * Licensed under the MPL, 2.0 licenses.
  */
 
 /**
@@ -194,8 +202,12 @@ HTMLElement.prototype.getStyle = function(styleName) {
 	return value;
 };
 /* exported ValidationHelper */
-/**
- * Created by Renie Siqueira.
+/*
+ * ThorJs
+ * https://github.com/renie/thorJs
+ *
+ * Copyright (c) 2014 Renie Siqueira
+ * Licensed under the MPL, 2.0 licenses.
  */
 
 function ValidationHelper() {}

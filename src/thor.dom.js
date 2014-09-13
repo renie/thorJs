@@ -1,6 +1,10 @@
 /* globals HTMLDocument*/
-/**
- * Created by Renie Siqueira.
+/*
+ * ThorJs
+ * https://github.com/renie/thorJs
+ *
+ * Copyright (c) 2014 Renie Siqueira
+ * Licensed under the MPL, 2.0 licenses.
  */
 
 /**

@@ -1,4 +1,13 @@
 /* globals Thor */
+
+/*
+ * ThorJs
+ * https://github.com/renie/thorJs
+ *
+ * Copyright (c) 2014 Renie Siqueira
+ * Licensed under the MPL, 2.0 licenses.
+ */
+
 describe('Testing THOR DOM functions:', function () {
 	afterEach(function() {
 		document.head.innerHTML = '';
@@ -10,7 +19,7 @@ describe('Testing THOR DOM functions:', function () {
 	 */
 	it('GETMETA - there is no meta tag', function () {
 		var result = function(){
-			Thor.DOM.getMeta(document, 'testingmeta');
+			Thor.DOM.getMeta('testingmeta');
 		};
 		expect(result).toThrow(new Error('There is no meta tags with name: testingmeta'));
 	});
@@ -21,7 +30,7 @@ describe('Testing THOR DOM functions:', function () {
 		newMeta.setAttribute('content','this meta has been tested!');
 		document.head.appendChild(newMeta);
 
-		var result = Thor.DOM.getMeta(document, 'testingmeta');
+		var result = Thor.DOM.getMeta('testingmeta');
 		expect(result).toEqual('this meta has been tested!');
 	});
 	it('GETMETA - get a non existing meta value', function () {
@@ -31,7 +40,7 @@ describe('Testing THOR DOM functions:', function () {
 		document.head.appendChild(newMeta);
 
 		var result = function(){
-			Thor.DOM.getMeta(document, 'testingwrongmeta');
+			Thor.DOM.getMeta('testingwrongmeta');
 		};
 		expect(result).toThrow(new Error('There is no meta tags with name: testingwrongmeta'));
 	});
@@ -43,7 +52,7 @@ describe('Testing THOR DOM functions:', function () {
 		document.head.appendChild(newMeta);
 
 		var result = function(){
-			Thor.DOM.getMeta(document, '');
+			Thor.DOM.getMeta('');
 		};
 		expect(result).toThrow(new Error('There is no meta tags with name: '));
 	});
@@ -55,7 +64,7 @@ describe('Testing THOR DOM functions:', function () {
 		document.head.appendChild(newMeta);
 
 		var result = function(){
-			Thor.DOM.getMeta(document, 0);
+			Thor.DOM.getMeta();
 		};
 		expect(result).toThrow(new Error('String expected!'));
 	});
@@ -67,7 +76,7 @@ describe('Testing THOR DOM functions:', function () {
 		document.head.appendChild(newMeta);
 
 		var result = function(){
-			Thor.DOM.getMeta(document, document.createElement('div'));
+			Thor.DOM.getMeta(document.createElement('div'));
 		};
 		expect(result).toThrow(new Error('String expected!'));
 	});
