@@ -31,7 +31,7 @@ a more professional documentation.
 Ok it does not reduces that much, and for code organization it would be better. But I prefer to get best performance on ThorJS, thus when other people were using this it will never be the cause of bad performance.
 BTW, we will have some changes about this soon ;)~~
 
-UPDATE (Sep 9th '14)
+*UPDATE (Sep 9th '14)*
 
 Now it's extending String and Element objects, and creating ValidationHelper as well. 
 
@@ -40,9 +40,10 @@ BUT it will be like this just for  dev purposes.
 I'll create a builder for converting this to several patterns. Including, obviously, that 'procedural' way.
 
 
-UPDATE (Jan 12th '15)
-Builder project
-(https://github.com/renie/thorJS-builder).
+*UPDATE (Jan 12th '15)*
+
+
+Builder project (https://github.com/renie/thorJS-builder).
 
 
 #### Why so many simple functions?
