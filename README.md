@@ -40,6 +40,8 @@ BUT it will be like this just for  dev purposes.
 I'll create a builder for converting this to several patterns. Including, obviously, that 'procedural' way.
 
 
+
+
 *UPDATE (Jan 12th '15)*
 
 
