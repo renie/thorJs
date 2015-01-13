@@ -40,6 +40,11 @@ BUT it will be like this just for  dev purposes.
 I'll create a builder for converting this to several patterns. Including, obviously, that 'procedural' way.
 
 
+UPDATE (Jan 12th '15)
+Builder project
+(https://github.com/renie/thorJS-builder).
+
+
 #### Why so many simple functions?
 Exactly because of simplicity, it should be simple and fast. Many people used to import
 big javascript libraries just to use this kind of functions. This results in large requests 
