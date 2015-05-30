@@ -9,6 +9,14 @@
 describe('Testing THOR String functions:', function() {
 
 	/**
+	* FORMAT
+	*/
+	it('TRIM - multiple and variable spaces', function () {
+		var result = 'We {0} {1} a {2}'.format('are', 'making', 'test');
+		expect(result).toEqual('We are making a test');
+	});
+
+	/**
 	* TRIM
 	*/
 	it('TRIM - multiple and variable spaces', function () {
