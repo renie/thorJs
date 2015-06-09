@@ -24,6 +24,7 @@ module.exports = function(grunt) {
 			js: {
 				src: [
 					'src/thor.string.js',
+					'src/thor.date.js',
 					'src/thor.dom.js',
 					'src/thor.validation.js'
 				],
