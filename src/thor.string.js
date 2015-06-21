@@ -8,6 +8,18 @@
  */
 
 /**
+ * Function for replace every ocurrence of {\d} by corresponding parameter
+ * @returns {string}
+ */
+String.prototype.format = function() {
+	'use strict';
+	var args = arguments;
+	return this.replace(/{(\d+)}/g, function(match, number) { 
+		return typeof args[number] != 'undefined' ? args[number] : match;
+	});
+};
+
+/**
  * Function for removing every single space of the string
  * @returns {string}
  */
